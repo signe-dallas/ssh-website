@@ -31,12 +31,15 @@ body {
 }
 
 /* Header Styles */
-.header {
-    background-color: #fff;
-    border-bottom: 1px solid var(--border-color);
+#site-header {
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -2267,6 +2270,20 @@ body {
     font-size: 0.95rem;
 }
 
+.get-started-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    list-style-position: outside;
+    text-align: left;
+    color: #666;
+    font-size: 0.95rem;
+    display: block;
+}
+
+.get-started-list li {
+    margin-bottom: 0.5rem;
+}
+
 .get-started-cta-row {
     margin-top: 2rem;
     display: flex;
@@ -2297,3 +2314,5 @@ body {
         flex-direction: column;
     }
 }
+
+
