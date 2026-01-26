@@ -428,6 +428,11 @@ body {
     margin-bottom: 3rem;
 }
 
+.highlights .section-header {
+    margin-bottom: 1.5rem;
+}
+
+
 .section-header h2 {
     font-size: 2rem;
     color: var(--primary-color);
@@ -452,7 +457,7 @@ body {
 
 .highlight-card {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -479,8 +484,17 @@ body {
     color: var(--primary-color);
 }
 
+.highlight-card .pill {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
 .highlight-card p {
     color: #666;
+}
+
+.highlight-card .btn {
+    margin-top: 1rem;
 }
 
 /* About Section */
@@ -1159,6 +1173,31 @@ body {
 /* Browse Toolkits Section */
 .browse-toolkits {
     padding: var(--padding-xl) 0;
+}
+
+
+.toolkits-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    max-width: 384px;
+}
+
+.toolkits-filter label {
+    font-weight: 600;
+    color: #333;
+}
+
+.toolkits-filter select {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fff;
 }
 
 .browse-toolkits h2 {
@@ -1997,7 +2036,7 @@ body {
 
 .event-columns-compact h4 {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     color: #333;
 }
 
@@ -2040,6 +2079,40 @@ body {
     flex-wrap: wrap;
 }
 
+.toolkit-used {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    color: #555;
+    font-size: 0.9rem;
+    flex-wrap: nowrap;
+}
+
+.toolkit-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.toolkit-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    stroke: #666;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+body[data-page="community-stories"] .event-columns-compact ul {
+    margin-bottom: 0.5rem;
+}
+
 .pill {
     background-color: #e8e8e8;
     border: 1px solid #ccc;
@@ -2062,9 +2135,26 @@ body {
     margin-bottom: 2rem;
 }
 
+body[data-page="community-stories"] .section-header + .filter-bar {
+    margin-top: 1.5rem;
+}
+
 .filter-label {
     font-weight: 600;
     color: #333;
+}
+
+.filter-label-block {
+    width: 100%;
+}
+
+.filter-select {
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    color: #333;
+    background-color: #fff;
 }
 
 .events-list {
@@ -2095,7 +2185,7 @@ body {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 0;
     align-items: center;
 }
 
@@ -2314,5 +2404,6 @@ body {
         flex-direction: column;
     }
 }
+
 
 
