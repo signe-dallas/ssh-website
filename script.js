@@ -36,8 +36,10 @@ function setActiveNav() {
         home: 'home',
         'browse-toolkits': 'toolkits',
         'about-toolkits': 'toolkits',
+        'what-are-toolkits': 'toolkits',
         faq: 'insights',
         events: 'events',
+        'community-stories': 'community-stories',
         about: 'about',
         contact: 'contact',
         'get-started': 'get-started'
@@ -159,6 +161,34 @@ function setupRippleEffect() {
     document.head.appendChild(style);
 }
 
+function setupFAQAccordion() {
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    
+    if (faqHeaders.length === 0) {
+        return; // No custom accordion items found
+    }
+    
+    faqHeaders.forEach(header => {
+        const item = header.closest('.faq-item');
+        
+        if (item) {
+            header.addEventListener('click', function() {
+                const allItems = document.querySelectorAll('.faq-item');
+                
+                // Close other open items
+                allItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.querySelector('.faq-header')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     await loadSharedShell();
     setupSmoothScrolling();
@@ -167,5 +197,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupAnimations();
     setupMobileMenu();
     setupRippleEffect();
+    setupFAQAccordion();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });
