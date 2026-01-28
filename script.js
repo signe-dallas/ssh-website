@@ -189,6 +189,142 @@ function setupFAQAccordion() {
     });
 }
 
+function setupCustomSelects() {
+    const selects = document.querySelectorAll('.custom-select');
+
+    if (selects.length === 0) {
+        return;
+    }
+
+    const closeAll = (except = null) => {
+        selects.forEach(select => {
+            if (select !== except) {
+                select.classList.remove('open');
+                const trigger = select.querySelector('.custom-select-trigger');
+                if (trigger) {
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    };
+
+    selects.forEach(select => {
+        const trigger = select.querySelector('.custom-select-trigger');
+        const options = Array.from(select.querySelectorAll('[role="option"]'));
+
+        if (!trigger || options.length === 0) {
+            return;
+        }
+
+        trigger.addEventListener('click', event => {
+            event.stopPropagation();
+            const isOpen = select.classList.contains('open');
+            closeAll(select);
+            select.classList.toggle('open', !isOpen);
+            trigger.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', event => {
+                event.stopPropagation();
+                options.forEach(item => item.setAttribute('aria-selected', 'false'));
+                option.setAttribute('aria-selected', 'true');
+                const valueTarget = trigger.querySelector('span');
+                if (valueTarget) {
+                    valueTarget.textContent = option.textContent.trim();
+                }
+                select.dataset.value = option.dataset.value || '';
+                if (select.dataset.select === 'toolkit-focus') {
+                    filterToolkits(select.dataset.value || '');
+                }
+                if (select.dataset.select === 'filter-topic' ||
+                    select.dataset.select === 'filter-institution' ||
+                    select.dataset.select === 'filter-toolkit') {
+                    filterCommunityStories();
+                }
+                select.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    });
+
+    document.addEventListener('click', () => closeAll());
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeAll();
+        }
+    });
+}
+
+function filterToolkits(value) {
+    const grid = document.querySelector('.toolkits-grid');
+    if (!grid) {
+        return;
+    }
+
+    const focusMap = {
+        'data-decisions': 'data to inform decisions',
+        'resource-optimization': 'financial resources optimization',
+        'planning-processes': 'planning, processes and budgeting'
+    };
+
+    const cards = grid.querySelectorAll('.toolkit-card');
+    cards.forEach(card => {
+        if (!value) {
+            card.style.display = '';
+            return;
+        }
+
+        const tag = card.querySelector('.toolkit-tag');
+        const tagText = tag ? tag.textContent.trim().toLowerCase() : '';
+        const target = focusMap[value] || '';
+        const shouldShow = tagText === target;
+        card.style.display = shouldShow ? '' : 'none';
+    });
+}
+
+function filterCommunityStories() {
+    const page = document.body.dataset.page;
+    if (page !== 'community-stories') {
+        return;
+    }
+
+    const topicSelect = document.querySelector('[data-select="filter-topic"]');
+    const institutionSelect = document.querySelector('[data-select="filter-institution"]');
+    const toolkitSelect = document.querySelector('[data-select="filter-toolkit"]');
+
+    const getSelectedValue = (select) => {
+        const selected = select?.querySelector('[role="option"][aria-selected="true"]');
+        return selected?.dataset.value || '';
+    };
+
+    const topicValue = getSelectedValue(topicSelect);
+    const institutionValue = getSelectedValue(institutionSelect);
+    const toolkitValue = getSelectedValue(toolkitSelect);
+
+    const cards = document.querySelectorAll('.event-card');
+    cards.forEach(card => {
+        const secondaryTag = card.querySelector('.event-meta .toolkit-tag.secondary');
+        const primaryTag = card.querySelector('.event-meta .toolkit-tag:not(.secondary)');
+        const toolkitText = card.querySelector('.toolkit-text');
+
+        const topicText = secondaryTag ? secondaryTag.textContent.trim().toLowerCase() : '';
+        const institutionText = primaryTag ? primaryTag.textContent.trim().toLowerCase() : '';
+        const toolkitLabel = toolkitText
+            ? toolkitText.textContent.replace('Toolkit Used:', '').trim().toLowerCase().replace(/\s+/g, ' ')
+            : '';
+        const normalizedToolkitValue = toolkitValue
+            ? toolkitValue.replace(/-/g, ' ').toLowerCase().replace(/\s+/g, ' ')
+            : '';
+
+        const matchesTopic = !topicValue || topicText.includes(topicValue.replace(/-/g, ' ').toLowerCase()) || topicText === topicValue.toLowerCase();
+        const matchesInstitution = !institutionValue || institutionText.includes(institutionValue.replace(/-/g, ' ').toLowerCase()) || institutionText === institutionValue.toLowerCase();
+        const matchesToolkit = !toolkitValue || toolkitLabel.includes(normalizedToolkitValue) || toolkitLabel === normalizedToolkitValue;
+
+        card.style.display = matchesTopic && matchesInstitution && matchesToolkit ? '' : 'none';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     await loadSharedShell();
     setupSmoothScrolling();
@@ -198,5 +334,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupMobileMenu();
     setupRippleEffect();
     setupFAQAccordion();
+    setupCustomSelects();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,40 +23,57 @@
            <h2>Browse Use Cases</h2>
             <div class="filter-bar">
                 <span class="filter-label filter-label-block">Filter by:</span>
-                <label class="filter-label" for="filter-topic">Topic</label>
-                <select id="filter-topic" class="filter-select">
-                    <option value="">All topics</option>
-                    <option value="improvement">Improvement Project</option>
-                    <option value="affordability">Affordability</option>
-                    <option value="completion">Completion</option>
-                </select>
-                <label class="filter-label" for="filter-institution">Institution Type</label>
-                <select id="filter-institution" class="filter-select">
-                    <option value="">All types</option>
-                    <option value="public-2">Public 2-year</option>
-                    <option value="private-2">Private 2-year</option>
-                    <option value="regional-system">Regional system</option>
-                </select>
-                <label class="filter-label" for="filter-toolkit">Toolkit Used</label>
-                <select id="filter-toolkit" class="filter-select">
-                    <option value="">All toolkits</option>
-                    <option value="budget-equity-blueprint">Budget Equity Blueprint</option>
-                    <option value="toolkit-b">Toolkit B</option>
-                    <option value="toolkit-c">Toolkit C</option>
-                </select>
+                <label class="filter-label" id="filter-topic-label">Project Type</label>
+                <div class="custom-select" data-select="filter-topic">
+                    <button type="button" class="custom-select-trigger" id="filter-topic" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="filter-topic-label filter-topic-value">
+                        <span id="filter-topic-value">All projects</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="filter-topic-label">
+                        <li role="option" data-value="" aria-selected="true">All projects</li>
+                        <li role="option" data-value="improvement">Improvement Project</li>
+                
+                    </ul>
+                </div>
+                <label class="filter-label" id="filter-institution-label">Institution Type</label>
+                <div class="custom-select" data-select="filter-institution">
+                    <button type="button" class="custom-select-trigger" id="filter-institution" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="filter-institution-label filter-institution-value">
+                        <span id="filter-institution-value">All institutions</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="filter-institution-label">
+                        <li role="option" data-value="" aria-selected="true">All institutions</li>
+                        <li role="option" data-value="public-2">Public 2-year</li>
+                        <li role="option" data-value="public-4">Public 4-year</li>
+            
+                    </ul>
+                </div>
+                <label class="filter-label" id="filter-toolkit-label">Toolkit Used</label>
+                <div class="custom-select" data-select="filter-toolkit">
+                    <button type="button" class="custom-select-trigger" id="filter-toolkit" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="filter-toolkit-label filter-toolkit-value">
+                        <span id="filter-toolkit-value">All toolkits</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="filter-toolkit-label">
+                        <li role="option" data-value="" aria-selected="true">All toolkits</li>
+                        <li role="option" data-value="budget-equity-blueprint">Budget Equity Blueprint</li>
+                        <li role="option" data-value="budget-process-assessment">Budget Process Assessment</li>
+        
+                    </ul>
+                </div>
             </div>
            
             <div class="events-grid">
                 <article class="event-card">
-                    <div class="event-wireframe">Snapshot Image Placeholder</div>
+                    <div class="event-wireframe">Alamo College District Logo</div>
                     <div class="event-meta">
-                        <span class="event-date">Public 2-year</span>
-                        <span class="event-type">Improvement Project</span>
+                        <span class="toolkit-tag">Public 2-year</span>
+                        <span class="toolkit-tag secondary">Improvement Project</span>
                     </div>
-                    <h3>Improving the Use of Designated Innovation Funds at Atlantic Cape Community College</h3>
+                    <h3>Allocating Resources to Enhance Equitable Student Outcomes</h3>
                     <div class="event-columns-compact">
                         <h4>Problem</h4>
-                        <p>Designated innovation funds were underutilized due to unclear processes, inconsistent submissions, and limited alignment with student success priorities.</p>
+                        <p>Budget allocation processes did not consistently use disaggregated student data, limiting the institution’s ability to target resources toward equity gaps and student success priorities.</p>
                     </div>
                     <div class="toolkit-used">
                         <span class="toolkit-text">
@@ -65,26 +82,35 @@
                                 <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
                                 <path d="M4 11h16"></path>
                             </svg>
-                            <strong>Toolkit Used:</strong> Budget Equity Bluepring
+                            <strong>Toolkit Used:</strong> Budget Equity Blueprint
                         </span>
                     </div>
                     <div class="event-columns-compact">
-                        <h4>Outcome</h4>
-                       <p>Higher-quality, better-aligned proposals, increased campus engagement, and a sustainable process for funding and scaling initiatives that improve student outcomes.</p>
+                        <h4>Outcomes</h4>
+                       <ul>
+                        <li>Shifted resources to prioritize case management advising for students needing the most support</li>
+                        <li>Allocated an additional $2M to targeted advising strategies</li>
+                        <li>Strengthened data-informed budgeting focused on closing equity gaps</li>
+                        <li>Established a repeatable process for equitable resource allocation</li>
+                    </ul>
                     </div>
                     <div class="event-actions">
                         <a href="#" class="btn btn-primary">Read Use Case</a>
                         <a href="#" class="btn btn-secondary">Download PDF</a>
                     </div>
                 </article>
-                <article class="event-card">
-                    <div class="event-wireframe">Snapshot Image Placeholder</div>
+                
+<article class="event-card">
+                    <div class="event-wireframe">Brooklyn College Logo Placeholder</div>
                     <div class="event-meta">
-                        <span class="event-date">Private 2-year</span>
-                        <span class="event-type">Affordability</span>
+                        <span class="toolkit-tag">Public 4-year</span>
+                        <span class="toolkit-tag secondary">Improvement Project</span>
                     </div>
-                    <h3>Targeted Aid Strategies for Continuing Students</h3>
-                    <p>Quick scan summary: what problem, what the team used, what they gained.</p>
+                    <h3>Improving Budget Office Practices and Budget Processes</h3>
+                    <div class="event-columns-compact">
+                        <h4>Problem</h4>
+                        <p>Enrollment declines created a structural budget deficit, while inconsistent communication and limited budget literacy made it difficult for campus stakeholders to navigate budgeting processes.</p>
+                    </div>
                     <div class="toolkit-used">
                         <span class="toolkit-text">
                             <svg class="toolkit-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -92,26 +118,35 @@
                                 <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
                                 <path d="M4 11h16"></path>
                             </svg>
-                            <strong>Toolkit Used:</strong> Toolkit B
+                            <strong>Toolkit Used:</strong> Budget Process Assessment
                         </span>
                     </div>
                     <div class="event-columns-compact">
-                        <h4>At a glance</h4>
-                        <p>Outcome: +8% persistence | Timeline: 4 months | Effort: Low</p>
+                        <h4>Outcomes</h4>
+                       <ul>
+                        <li>Identified campus-wide gaps in awareness of budget processes</li>
+                        <li>Implemented a new service model for responding to budget support requests</li>
+                        <li>Centralized and tracked help requests to improve responsiveness and expertise matching</li>
+                        <li>Created web-based training and information resources to strengthen budget literacy</li>
+                        <li>Established a repeatable assessment cycle to measure improvement over time</li>
+                    </ul>
                     </div>
                     <div class="event-actions">
-                        <a href="#" class="btn btn-primary">View Snapshot</a>
+                        <a href="#" class="btn btn-primary">Read Use Case</a>
                         <a href="#" class="btn btn-secondary">Download PDF</a>
                     </div>
                 </article>
-                <article class="event-card">
-                    <div class="event-wireframe">Snapshot Image Placeholder</div>
+<article class="event-card">
+                    <div class="event-wireframe">Central Lakes College Logo Placeholder</div>
                     <div class="event-meta">
-                        <span class="event-date">Regional system</span>
-                        <span class="event-type">Completion</span>
+                        <span class="toolkit-tag">Public 2-year</span>
+                        <span class="toolkit-tag secondary">Improvement Project</span>
                     </div>
-                    <h3>Scaling Early Alert Practices Across Campuses</h3>
-                    <p>Quick scan summary: what problem, what the team used, what they gained.</p>
+                    <h3>Integrating Equity-Focused Metrics into Planning and Budgeting</h3>
+                    <div class="event-columns-compact">
+                        <h4>Problem</h4>
+                        <p>Traditional planning and budgeting processes did not consistently center equity metrics, limiting the college’s ability to intentionally address disparities in student outcomes.</p>
+                    </div>
                     <div class="toolkit-used">
                         <span class="toolkit-text">
                             <svg class="toolkit-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -119,15 +154,20 @@
                                 <path d="M9 7V5a3 3 0 0 1 6 0v2"></path>
                                 <path d="M4 11h16"></path>
                             </svg>
-                            <strong>Toolkit Used:</strong> Toolkit C
+                            <strong>Toolkit Used:</strong> Budget Equity Blueprint
                         </span>
                     </div>
                     <div class="event-columns-compact">
-                        <h4>At a glance</h4>
-                        <p>Outcome: +6% completion | Timeline: 9 months | Effort: High</p>
+                        <h4>Outcome</h4>
+                       <ul>
+                        <li>Funding allocations more clearly aligned with institutional and statewide equity goals</li>
+                        <li>Improved ability to identify institutional practices affecting equitable student outcomes</li>
+                        <li>Increased cross-campus ownership and collaboration around equity priorities</li>
+                        <li>Stronger alignment between strategic planning, guided pathways, and resource allocation</li>
+                    </ul>
                     </div>
                     <div class="event-actions">
-                        <a href="#" class="btn btn-primary">View Snapshot</a>
+                        <a href="#" class="btn btn-primary">Read Use Case</a>
                         <a href="#" class="btn btn-secondary">Download PDF</a>
                     </div>
                 </article>
@@ -139,3 +179,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+

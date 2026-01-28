@@ -80,11 +80,59 @@
                 <a href="#" class="view-all">Browse Library -></a>
             </div>
             <div class="filter-bar">
-                <span class="filter-label">Filter by:</span>
-                <button class="pill pill-outline">Topic</button>
-                <button class="pill pill-outline">Audience</button>
-                <button class="pill pill-outline">Format</button>
-                <button class="pill pill-outline">Date</button>
+                <span class="filter-label filter-label-block">Filter by:</span>
+                <label class="filter-label" id="events-topic-label">Topic</label>
+                <div class="custom-select" data-select="events-topic">
+                    <button type="button" class="custom-select-trigger" id="events-topic" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="events-topic-label events-topic-value">
+                        <span id="events-topic-value">All topics</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="events-topic-label">
+                        <li role="option" data-value="" aria-selected="true">All topics</li>
+                        <li role="option" data-value="finance">Finance</li>
+                        <li role="option" data-value="equity">Equity</li>
+                        <li role="option" data-value="strategy">Strategy</li>
+                    </ul>
+                </div>
+                <label class="filter-label" id="events-audience-label">Audience</label>
+                <div class="custom-select" data-select="events-audience">
+                    <button type="button" class="custom-select-trigger" id="events-audience" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="events-audience-label events-audience-value">
+                        <span id="events-audience-value">All audiences</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="events-audience-label">
+                        <li role="option" data-value="" aria-selected="true">All audiences</li>
+                        <li role="option" data-value="finance-teams">Finance Teams</li>
+                        <li role="option" data-value="student-affairs">Student Affairs</li>
+                        <li role="option" data-value="institutional-leaders">Institutional Leaders</li>
+                    </ul>
+                </div>
+                <label class="filter-label" id="events-format-label">Format</label>
+                <div class="custom-select" data-select="events-format">
+                    <button type="button" class="custom-select-trigger" id="events-format" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="events-format-label events-format-value">
+                        <span id="events-format-value">All formats</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="events-format-label">
+                        <li role="option" data-value="" aria-selected="true">All formats</li>
+                        <li role="option" data-value="webinar">Webinar</li>
+                        <li role="option" data-value="panel">Panel</li>
+                        <li role="option" data-value="workshop">Workshop</li>
+                    </ul>
+                </div>
+                <label class="filter-label" id="events-date-label">Date</label>
+                <div class="custom-select" data-select="events-date">
+                    <button type="button" class="custom-select-trigger" id="events-date" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="events-date-label events-date-value">
+                        <span id="events-date-value">All dates</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="events-date-label">
+                        <li role="option" data-value="" aria-selected="true">All dates</li>
+                        <li role="option" data-value="upcoming">Upcoming</li>
+                        <li role="option" data-value="last-30-days">Last 30 days</li>
+                        <li role="option" data-value="2025">2025</li>
+                    </ul>
+                </div>
             </div>
             <div class="events-grid">
                 <article class="event-card">

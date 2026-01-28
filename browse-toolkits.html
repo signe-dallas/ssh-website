@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,24 +21,40 @@
     <!-- Browse Toolkits -->
     <section class="browse-toolkits">
         <div class="container">
-                        <div class="toolkits-filter">
-                <label for="toolkit-focus">Filter toolkits by focus area:</label>
-                <select id="toolkit-focus" name="toolkit-focus">
-                    <option>All toolkits</option>
-                    <option>Data to Inform Decisions</option>
-                    <option>Financial Resources Optimization</option>
-                    <option>Planning, Processes and Budgeting</option>
-                </select>
+            <div class="toolkits-filter">
+                <label id="toolkit-focus-label">Filter toolkits by focus area:</label>
+                <div class="custom-select" data-select="toolkit-focus">
+                    <button type="button" class="custom-select-trigger" id="toolkit-focus" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="toolkit-focus-label toolkit-focus-value">
+                        <span id="toolkit-focus-value">All toolkits</span>
+                        <span class="custom-select-caret" aria-hidden="true"></span>
+                    </button>
+                    <ul class="custom-select-options" role="listbox" aria-labelledby="toolkit-focus-label">
+                        <li role="option" data-value="" aria-selected="true">All toolkits</li>
+                        <li role="option" data-value="data-decisions">Data to Inform Decisions</li>
+                        <li role="option" data-value="resource-optimization">Financial Resources Optimization</li>
+                        <li role="option" data-value="planning-processes">Planning, Processes and Budgeting</li>
+                    </ul>
+                </div>
             </div>
             <div class="toolkits-grid">
                 <div class="toolkit-card">
-                    <div class="toolkit-tag">Financial Literacy</div>
-                    <div class="toolkit-tag secondary">Updated Toolkit</div>
-                    <h3>Financial Wellness Toolkit</h3>
-                    <p class="problem"><strong>Problem Addressed:</strong> Students struggle with financial literacy and money management</p>
-                    <p class="audience"><strong>Who It's For:</strong> Student Affairs, Financial Aid Offices</p>
-                    <p class="outcome"><strong>Outcomes:</strong> Improved student financial decision-making, reduced financial stress</p>
-                    <p class="implementation-time">4-6 weeks implementation time</p>
+                    <div class="toolkit-tag">Data to Inform Decisions</div>
+                  
+                    <h3>Data and Systems Governance Guide</h3>
+                    <p class="problem"><strong>Problem Addressed:</strong> Disconnected data limits data-informed decision-making.</p>
+                    <p class="audience"><strong>Who It's For:</strong> CBOs, Finance, IT, Institutional Research</p>
+                    <p class="outcome"><strong>Outcomes</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Clear data governance policies</li>
+                        <li>Stronger cross-campus collaboration</li>
+                        <li>More trusted, usable analytics</li>
+                    </ul>
+                    <p class="toolkit-intent"><strong>Is this right for you?</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>You want to use data as a strategic asset</li>
+                        <li>Data ownership and standards are unclear</li>
+                        <li>Teams need shared governance and accountability</li>
+                    </ul>
                     <a href="#" class="view-toolkit-btn">
                         Launch Toolkit
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
@@ -47,15 +63,25 @@
                         </svg>
                     </a>
                 </div>
-
                 <div class="toolkit-card">
-                    <div class="toolkit-tag">Equity & Budget</div>
-                    <div class="toolkit-tag secondary">Popular</div>
-                    <h3>Equity-Centered Budgeting</h3>
-                    <p class="problem"><strong>Problem Addressed:</strong> Institutional budgets don't align with equity goals</p>
-                    <p class="audience"><strong>Who It's For:</strong> Finance Teams, Institutional Leaders</p>
-                    <p class="outcome"><strong>Outcomes:</strong> Budget alignment with equity priorities, improved resource allocation</p>
-                    <p class="implementation-time">8-12 weeks implementation time</p>
+                    <div class="toolkit-tag">Financial Resources Optimization</div>
+                    <div class="toolkit-tag secondary">New Toolkit</div>
+                    <h3>Program Scanner</h3>
+                    <p class="problem"><strong>Problem Addressed:</strong> Institutions need to align academic programs with student outcomes, workforce demand, and financial sustainability.</p>
+                    <p class="audience"><strong>Who It's For:</strong> CBOs, Academic Leaders, Institutional Research, Advising and Planning Teams</p>
+                    <p class="outcome"><strong>Outcomes</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>More sustainable, high-impact program portfolios</li>
+                        <li>Programs aligned to high-growth careers and workforce needs</li>
+                        <li>Stronger advising using real-time labor market data</li>
+                        <li>Clear, evidence-based metrics for planning and accreditation</li>
+                    </ul>
+                    <p class="toolkit-intent"><strong>Is this right for you?</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>You’re evaluating or rebalancing academic programs</li>
+                        <li>Workforce alignment and student outcomes are a priority</li>
+                        <li>Leaders need shared, data-driven insights for decisions</li>
+                    </ul>
                     <a href="#" class="view-toolkit-btn">
                         Launch Toolkit
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
@@ -64,66 +90,102 @@
                         </svg>
                     </a>
                 </div>
-
+                <div class="toolkit-card">
+                    <div class="toolkit-tag">Planning, Processes and Budgeting</div>
+                    <div class="toolkit-tag secondary">Updated Toolkit</div>
+                    <h3>Budget Equity Blueprint</h3>
+                    <p class="problem"><strong>Problem Addressed:</strong> Budget decisions often overlook their impact on equitable student outcomes.</p>
+                    <p class="audience"><strong>Who It's For:</strong> CBOs, Budget and Finance Teams, Student Success and Equity Leaders</p>
+                    <p class="outcome"><strong>Outcomes</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Greater awareness of how budgets affect equity</li>
+                        <li>Stronger prioritization of equity in funding decisions</li>
+                        <li>More consistent use of disaggregated data to evaluate requests</li>
+                    </ul>
+                    <p class="toolkit-intent"><strong>Is this right for you?</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>You want budget decisions to advance equity goals</li>
+                        <li>Funding for student success needs clearer equity rationale</li>
+                        <li>Leaders need shared criteria for equitable investment</li>
+                    </ul>
+                    <a href="#" class="view-toolkit-btn">
+                        Launch Toolkit
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </a>
+                </div>
                 <div class="toolkit-card">
                     <div class="toolkit-tag">Data to Inform Decisions</div>
+                    
+                    <h3>IPEDS Peer Benchmarking Dashboards</h3>
+                    <p class="problem"><strong>Problem Addressed:</strong> Leaders struggle to quickly interpret institutional and peer data to inform decisions.</p>
+                    <p class="audience"><strong>Who It's For:</strong> CBOs, Senior Leadership, Institutional Research, Planning Teams</p>
+                    <p class="outcome"><strong>Outcomes</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Clear visibility into institutional and peer performance</li>
+                        <li>Better understanding of key trends and patterns</li>
+                        <li>Stronger data-informed conversations and decisions</li>
+                    </ul>
+                    <p class="toolkit-intent"><strong>Is this right for you?</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>You need quick, reliable peer comparisons</li>
+                        <li>Leaders want data they can easily interpret and share</li>
+                        <li>Data insights need to drive action, not just reporting</li>
+                    </ul>
+                    <a href="#" class="view-toolkit-btn">
+                        Launch Toolkit
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="toolkit-card">
+                    <div class="toolkit-tag">Financial Resources Optimization</div>
+                    
+                    <h3>Budget Builder</h3>
+                    <p class="problem"><strong>Problem Addressed:</strong> Budget requests are fragmented and hard to align with institutional priorities.</p>
+                    <p class="audience"><strong>Who It's For:</strong> CBOs, Budget & Finance Teams, Campus Stakeholders</p>
+                    <p class="outcome"><strong>Outcomes</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Clearer, more consistent budget submissions</li>
+                        <li>Stronger alignment between funding and strategy</li>
+                        <li>Increased collaboration across functional areas</li>
+                    </ul>
+                    <p class="toolkit-intent"><strong>Is this right for you?</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Budget requests vary widely in quality or format</li>
+                        <li>Student outcomes need to be centered in budgeting</li>
+                        <li>Teams need a shared, systems-thinking approach</li>
+                    </ul>
+                    <a href="https://app.nacubostudentsuccess.org/public/toolkits/e08b5acc-3536-43e6-bac4-49edc0c4e3e4" class="view-toolkit-btn">
+                        Launch Toolkit
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="toolkit-card">
+                    <div class="toolkit-tag">Planning, Processes and Budgeting</div>
                     <div class="toolkit-tag secondary">Updated Toolkit</div>
-                    <h3>Student Success Metrics Framework</h3>
-                    <p class="problem"><strong>Problem Addressed:</strong> Difficulty measuring and tracking student success outcomes</p>
-                    <p class="audience"><strong>Who It's For:</strong> Institutional Researchers, Data Teams</p>
-                    <p class="outcome"><strong>Outcomes:</strong> Clear success metrics, data-driven decision making</p>
-                    <p class="implementation-time">6-8 weeks implementation time</p>
-                    <a href="#" class="view-toolkit-btn">
-                        Launch Toolkit
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="toolkit-card">
-                    <div class="toolkit-tag">Student Support</div>
-                    <div class="toolkit-tag secondary">New</div>
-                    <h3>Holistic Student Support Model</h3>
-                    <p class="problem"><strong>Problem Addressed:</strong> Fragmented student support services across campus</p>
-                    <p class="audience"><strong>Who It's For:</strong> Student Services Directors, Campus Leaders</p>
-                    <p class="outcome"><strong>Outcomes:</strong> Integrated support services, improved student retention</p>
-                    <p class="implementation-time">10-14 weeks implementation time</p>
-                    <a href="#" class="view-toolkit-btn">
-                        Launch Toolkit
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="toolkit-card">
-                    <div class="toolkit-tag">First Year Success</div>
-                    <div class="toolkit-tag secondary">Popular</div>
-                    <h3>First-Year Experience Toolkit</h3>
-                    <p class="problem"><strong>Problem Addressed:</strong> New students lack foundational financial and success knowledge</p>
-                    <p class="audience"><strong>Who It's For:</strong> Admissions, Orientation Teams</p>
-                    <p class="outcome"><strong>Outcomes:</strong> Better prepared first-year students, improved persistence rates</p>
-                    <p class="implementation-time">5-7 weeks implementation time</p>
-                    <a href="#" class="view-toolkit-btn">
-                        Launch Toolkit
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="toolkit-card">
-                    <div class="toolkit-tag">Faculty Engagement</div>
-                    <div class="toolkit-tag secondary">New</div>
-                    <h3>Faculty Engagement in Student Success</h3>
-                    <p class="problem"><strong>Problem Addressed:</strong> Faculty disconnected from student success initiatives</p>
-                    <p class="audience"><strong>Who It's For:</strong> Faculty Development, Academic Affairs</p>
-                    <p class="outcome"><strong>Outcomes:</strong> Increased faculty engagement, improved academic outcomes</p>
-                    <p class="implementation-time">6-9 weeks implementation time</p>
+                    <h3>Collaboration Accelerator</h3>
+                    <p class="problem"><strong>Problem Addressed:</strong> Siloed planning and decision-making limit institutional and student outcomes.</p>
+                    <p class="audience"><strong>Who It's For:</strong> CBOs, Finance and Business Office Teams, Cross-Functional Campus Leaders</p>
+                    <p class="outcome"><strong>Outcomes</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Stronger cross-campus collaboration</li>
+                        <li>More aligned, efficient planning and resource decisions</li>
+                        <li>Improved, scalable student outcomes</li>
+                    </ul>
+                    <p class="toolkit-intent"><strong>Is this right for you?</strong></p>
+                    <ul class="toolkit-list outcome-list">
+                        <li>Teams struggle to work across silos</li>
+                        <li>Collaboration is needed for complex decisions</li>
+                        <li>Planning and budgeting require shared ownership</li>
+                    </ul>
                     <a href="#" class="view-toolkit-btn">
                         Launch Toolkit
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.4rem; display: inline;">
@@ -148,6 +210,18 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -15,6 +15,8 @@
     --padding-base: 1rem;
     --padding-lg: 2rem;
     --padding-xl: 3rem;
+    --paragraph-spacing: 1rem;
+    --filter-section-spacing: 2.5rem;
 }
 
 body {
@@ -22,6 +24,14 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: #fff;
+}
+
+p {
+    margin: 0 0 var(--paragraph-spacing);
+}
+
+p + p {
+    margin-top: 0;
 }
 
 .container {
@@ -526,7 +536,7 @@ body {
 }
 
 .about-text p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--paragraph-spacing);
     color: #555;
     line-height: 1.8;
 }
@@ -689,7 +699,7 @@ body {
 
 .testimonial-text {
     font-style: italic;
-    margin-bottom: 1rem;
+    margin-bottom: var(--paragraph-spacing);
     color: #555;
     line-height: 1.8;
 }
@@ -1137,7 +1147,7 @@ body {
     font-size: 1.05rem;
     color: #555;
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin-bottom: var(--paragraph-spacing);
 }
 
 .overview-image .media-placeholder {
@@ -1334,7 +1344,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--filter-section-spacing);
     width: 100%;
     max-width: 384px;
 }
@@ -1370,7 +1380,7 @@ body {
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: all 0.3s ease;
 }
 
@@ -1418,9 +1428,49 @@ body {
 
 .toolkit-card p {
     font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 0.8rem;
+    color: #666;
+    margin-bottom: var(--paragraph-spacing);
     line-height: 1.5;
+}
+
+.toolkit-card .toolkit-list {
+    margin: 0 0 var(--paragraph-spacing);
+    padding-left: 1.25rem;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.toolkit-card .toolkit-list + .view-toolkit-btn {
+    margin-top: 0.75rem;
+}
+
+.toolkit-card p.outcome,
+.toolkit-card p.toolkit-intent {
+    margin-bottom: 0.3rem;
+}
+
+.toolkit-card .outcome-list {
+    margin-bottom: var(--paragraph-spacing);
+}
+
+.toolkit-card .checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toolkit-card .checklist li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.toolkit-card .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #333;
+    font-weight: 700;
 }
 
 .toolkit-card .problem,
@@ -1728,7 +1778,7 @@ body {
 }
 
 .auth-footer p {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--paragraph-spacing);
     color: #666;
 }
 
@@ -2032,7 +2082,7 @@ body {
     font-size: 0.95rem;
     color: #666;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: var(--paragraph-spacing);
 }
 
 .contact-card p:last-child {
@@ -2187,7 +2237,7 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1rem 1.25rem;
+    padding: 0;
     margin-bottom: 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
@@ -2254,6 +2304,7 @@ body {
     gap: 1rem;
 }
 
+
 .event-card-wide {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -2268,14 +2319,22 @@ body {
 
 .event-columns-compact ul {
     list-style: disc;
-    padding-left: 1.25rem;
+    padding-left: 0.9rem;
     color: #555;
     margin-bottom: 1rem;
 }
 
+.event-columns-compact li {
+    margin-bottom: 0.5rem;
+}
+
+.event-columns-compact li:last-child {
+    margin-bottom: 0;
+}
+
 .event-columns-compact p {
     color: #555;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--paragraph-spacing);
 }
 
 .event-wireframe {
@@ -2299,6 +2358,15 @@ body {
     gap: 1rem;
 }
 
+body[data-page="community-stories"] .event-meta {
+    justify-content: flex-start;
+    gap: 0;
+}
+
+body[data-page="community-stories"] .event-meta .toolkit-tag {
+    margin-right: 0.75rem;
+}
+
 .event-tags {
     display: flex;
     gap: 0.5rem;
@@ -2309,10 +2377,14 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: 0.75rem;
+    margin: 0.75rem 0 0.5rem;
     color: #555;
     font-size: 0.9rem;
     flex-wrap: nowrap;
+}
+
+.toolkit-used + .event-columns-compact {
+    margin-top: 0;
 }
 
 .toolkit-text {
@@ -2358,12 +2430,17 @@ body[data-page="community-stories"] .event-columns-compact ul {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: var(--filter-section-spacing);
 }
 
 body[data-page="community-stories"] .section-header + .filter-bar {
     margin-top: 1.5rem;
 }
+
+body[data-page="community-stories"] .events-section h2 + .filter-bar {
+    margin-top: 2rem;
+}
+
 
 .filter-label {
     font-weight: 600;
@@ -2382,6 +2459,84 @@ body[data-page="community-stories"] .section-header + .filter-bar {
     color: #333;
     background-color: #fff;
 }
+
+.filter-bar .custom-select {
+    margin-right: 0.5rem;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-flex;
+}
+
+.custom-select-trigger {
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    color: #333;
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    line-height: 1.2;
+    min-width: 160px;
+}
+
+.custom-select-trigger:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.custom-select-caret {
+    margin-left: auto;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+.custom-select-options {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 260px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    padding: 0.35rem;
+    margin: 0;
+    list-style: none;
+    display: none;
+    z-index: 10;
+}
+
+.custom-select.open .custom-select-options {
+    display: block;
+}
+
+.custom-select-options li {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.custom-select-options li[aria-selected="true"] {
+    background-color: #e6e6e6;
+    font-weight: 600;
+}
+
+.custom-select-options li:hover {
+    background-color: #f2f2f2;
+}
+
 
 .events-list {
     display: grid;
@@ -2458,7 +2613,7 @@ body[data-page="community-stories"] .section-header + .filter-bar {
 .about-hub-text p {
     color: #555;
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin-bottom: var(--paragraph-spacing);
 }
 
 .about-hub-card {
@@ -2629,6 +2784,15 @@ body[data-page="community-stories"] .section-header + .filter-bar {
     .get-started-cta-row {
         flex-direction: column;
     }
+}
+
+/* Match paragraph spacing for all sections following the page title. */
+.page-title ~ section p {
+    margin-bottom: var(--paragraph-spacing);
+}
+
+.page-title ~ section p:last-child {
+    margin-bottom: 0;
 }
 
 
