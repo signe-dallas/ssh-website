@@ -2288,6 +2288,7 @@ p + p {
     align-items: start;
 }
 
+
 .event-card-featured-layout .event-card-featured-left {
     width: 260px;
 }
@@ -2328,6 +2329,10 @@ p + p {
     color: #333;
 }
 
+body.community-stories-variant .event-columns-compact h4 {
+    font-size: 1.15rem;
+}
+
 .event-columns-compact ul {
     list-style: disc;
     padding-left: 0.9rem;
@@ -2348,6 +2353,22 @@ p + p {
     margin-bottom: var(--paragraph-spacing);
 }
 
+body.community-stories-variant .event-card-featured-right h3 {
+    margin-bottom: 0.75rem;
+}
+
+body.community-stories-variant .event-card-featured-right h3 + .event-columns-compact {
+    margin-top: 0.75rem;
+}
+
+body.community-stories-variant .event-columns-compact + .event-columns-compact {
+    margin-top: 1rem;
+}
+
+body.community-stories-variant .event-columns-compact ul {
+    margin-bottom: 1.5rem;
+}
+
 .event-wireframe {
     height: 140px;
     border: 2px dashed #bbb;
@@ -2359,6 +2380,11 @@ p + p {
     font-weight: 600;
     font-size: 0.85rem;
     text-align: center;
+}
+
+body.community-stories-variant .event-wireframe {
+    width: 100%;
+    max-width: 260px;
 }
 
 .event-meta {
@@ -2403,8 +2429,19 @@ body[data-page="community-stories"] .event-meta .toolkit-tag {
     align-items: center;
     gap: 0.5rem;
     line-height: 1.2;
-    white-space: nowrap;
-    flex-wrap: nowrap;
+    white-space: normal;
+    flex-wrap: wrap;
+}
+
+.toolkit-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toolkit-value {
+    width: 100%;
+    padding-left: calc(16px + 0.5rem);
 }
 
 .toolkit-icon {
@@ -2416,10 +2453,6 @@ body[data-page="community-stories"] .event-meta .toolkit-tag {
     stroke: #666;
     stroke-width: 1.5;
     fill: none;
-}
-
-body[data-page="community-stories"] .event-columns-compact ul {
-    margin-bottom: 0.5rem;
 }
 
 .pill {
@@ -2579,6 +2612,10 @@ body[data-page="community-stories"] .events-section h2 + .filter-bar {
     flex-wrap: wrap;
     margin-top: 0;
     align-items: center;
+}
+
+body.community-stories-variant .event-actions {
+    margin-top: 0.75rem;
 }
 
 .event-actions .btn {
