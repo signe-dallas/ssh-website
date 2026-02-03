@@ -7,7 +7,7 @@ async function loadSharedShell() {
     }
 
     const [headerHtml, footerHtml] = await Promise.all([
-        fetch('header.html')
+        fetch('header-old.html')
             .then(response => (response.ok ? response.text() : ''))
             .catch(() => ''),
         fetch('footer.html')
