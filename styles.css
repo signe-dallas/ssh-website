@@ -1756,6 +1756,35 @@ p + p {
     background-color: #333;
 }
 
+/* Services page spacing */
+body[data-page="services"] section {
+    padding: var(--padding-xl) 0;
+}
+
+body[data-page="services"] .section-header {
+    margin-bottom: 1.5rem;
+}
+
+body[data-page="services"] .framework-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body[data-page="services"] .framework-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-page="services"] .framework-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+body[data-page="services"] .toolkit-cta .hero-buttons-group {
+    justify-content: center;
+}
+
 /* Authentication Section Styles */
 .auth-section {
     padding: var(--padding-xl) 0;
@@ -2893,6 +2922,13 @@ body.community-stories-variant .event-actions {
     margin-bottom: 1rem;
 }
 
+.highlight-card ul {
+    list-style: disc;
+    padding-left: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
 .about-hub-card li {
     margin-bottom: 0.5rem;
 }
@@ -3086,7 +3122,18 @@ body.community-stories-variant .event-actions {
     margin-bottom: 0;
 }
 
-.highlight-card ul + .btn,
+.highlight-card ul + .btn {
+    margin-top: 0.75rem;
+}
+
+.highlight-card p + ul {
+    margin-top: 0;
+}
+
+.highlight-card .ideal-label {
+    margin-bottom: 0.25rem;
+}
+
 .toolkit-card ul + .btn,
 .get-started-card ul + .btn,
 .about-hub-card ul + .btn {
