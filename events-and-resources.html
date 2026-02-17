@@ -3,37 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | NACUBO Student Success Hub</title>
+    <title>Events and Resources | NACUBO Student Success Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="services">
+<body data-page="events-resources">
     <div id="site-header"></div>
 
-    <!-- Services Hero -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-             
-                <h1>Services</h1>
-                <p class="hero-subtitle">NACUBO offers thought partnership, technical assistance, and training services to help institutions strengthen, sustain, and scale student outcomes.</p>
-                <div class="hero-buttons-group">
-                    <a href="contact.html" class="btn btn-primary btn-large">Talk With Us</a>
-                    <a href="index.html" class="btn btn-secondary btn-large">Optional Button</a>
+                <h1>Events and Resources</h1>
+                <p class="hero-subtitle">Explore upcoming opportunities, past events, and resources that support student success work.</p>
+            </div>
+            <aside class="hero-feature-card">
+                <div class="hero-feature-label">Next Up</div>
+                <div class="hero-feature-meta">
+                    <span>March 12, 2026</span>
+                    <span>3:00 - 3:45 PM ET</span>
                 </div>
+                <h2>Data-Driven Retention: Aligning Budgets with Persistence Goals</h2>
+                <p>Learn how institutions use Student Success Hub toolkits to align budget allocations with retention and persistence goals, featuring case studies from participating institutions.</p>
+                <div class="hero-feature-speaker">
+                    <span class="hero-feature-initials">KR</span>
+                    <span>Kelli Rainey, Ed.D.</span>
+                </div>
+                <div class="hero-feature-tags">
+                    <span>Retention</span>
+                    <span>Budgeting</span>
+                    <span>Data</span>
+                </div>
+                <a href="#" class="hero-feature-cta">Register for This Session <span aria-hidden="true">-></span></a>
+            </aside>
+        </div>
+    </section>
+
+    <section class="tab-nav">
+        <div class="container">
+            <div class="tab-nav-row" aria-label="Events and resources navigation">
+                <button class="tab-nav-link is-active" type="button" data-tab-target="upcoming-events">Upcoming Events</button>
+                <button class="tab-nav-link" type="button" data-tab-target="past-events">Past Events</button>
+                <button class="tab-nav-link" type="button" data-tab-target="services">Services</button>
+                <button class="tab-nav-link" type="button" data-tab-target="reports">Reports</button>
+                <button class="tab-nav-link" type="button" data-tab-target="blogs">Blogs</button>
             </div>
         </div>
     </section>
 
-    <!-- Avenues of Engagement -->
-    <section>
+    <section id="upcoming-events" class="events-section tab-panel is-active" data-tab-panel="upcoming-events">
         <div class="container">
             <div class="section-header">
-                <h2>Avenues of Engagement</h2>
+                <h2>Upcoming Events</h2>
             </div>
-            <p class="hero-subtitle">Three ways institutions partner with NACUBO. Engagements are tailored based on goals, capacity, and desired outcomes.</p>
+            <div class="event-cards">
+                <article class="event-card grayscale-card">
+                    <div class="event-card-top">
+                        <div class="event-pill-group">
+                            <span class="event-pill">April 2, 2026</span>
+                            <span class="event-time">3:00 - 3:45 PM ET</span>
+                            <span class="event-tag">Panel</span>
+                        </div>
+                    </div>
+                    <h3>Measuring ROI on Student Success Investments</h3>
+                    <p>Industry experts and institutional leaders share frameworks for demonstrating the value of student success initiatives to boards, legislators, and stakeholders.</p>
+                    <div class="event-meta">
+                        <span class="event-meta-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" focusable="false">
+                                <circle cx="8" cy="9" r="3"></circle>
+                                <circle cx="16" cy="9" r="3"></circle>
+                                <path d="M4.5 19c0-2.2 1.8-4 4-4h3c2.2 0 4 1.8 4 4"></path>
+                                <path d="M12.5 19c0-1.8 1.5-3.3 3.3-3.3h1.2c1.8 0 3.3 1.5 3.3 3.3"></path>
+                            </svg>
+                        </span>
+                        <span class="event-meta-label">Panel Discussion</span>
+                    </div>
+                    <a href="#" class="event-cta">Register Free <span aria-hidden="true"></span></a>
+                  
+                </article>
+                <article class="event-card grayscale-card">
+                    <div class="event-card-top">
+                        <div class="event-pill-group">
+                            <span class="event-pill">April 22, 2026</span>
+                            <span class="event-time">2:00 - 3:00 PM ET</span>
+                            <span class="event-tag">Workshop</span>
+                        </div>
+                    </div>
+                    <h3>From Plan to Action: Implementing a Toolkit at Your Institution</h3>
+                    <p>Hands-on workshop for teams ready to implement a Student Success Hub toolkit. Includes breakout exercises, implementation planning templates, and peer networking.</p>
+                    <div class="event-meta">
+                        <span class="event-meta-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" focusable="false">
+                                <circle cx="8" cy="9" r="3"></circle>
+                                <circle cx="16" cy="9" r="3"></circle>
+                                <path d="M4.5 19c0-2.2 1.8-4 4-4h3c2.2 0 4 1.8 4 4"></path>
+                                <path d="M12.5 19c0-1.8 1.5-3.3 3.3-3.3h1.2c1.8 0 3.3 1.5 3.3 3.3"></path>
+                            </svg>
+                        </span>
+                        <span class="event-meta-label">Terri Dautcher - NACUBO Consulting</span>
+                    </div>
+                    <a href="#" class="event-cta">Register Free <span aria-hidden="true"></span></a>
+                   
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="past-events" class="events-section tab-panel" data-tab-panel="past-events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Past Events</h2>
+            </div>
+            <p class="hero-subtitle">Past event recordings and resources coming soon.</p>
+        </div>
+    </section>
+
+    <section class="tab-panel" data-tab-panel="services">
+        <div class="container">
+            <div class="section-header">
+                <h1>Services</h1>
+            </div>
+            <p class="hero-subtitle">NACUBO offers thought partnership, technical assistance, and training services to help institutions strengthen, sustain, and scale student outcomes. Institutions partner with NACUBO in three distinct ways, with engagements tailored to their goals, capacity, and desired outcomes.</p>
             <div class="highlights-grid">
                 <div class="highlight-card">
-                    <h3>Community of Practice</h3>
+                    <h3>1. Community of Practice</h3>
                     <p>Sustained collaboration and guided facilitation for systemic change.</p>
                     <h4 class="ideal-label">Ideal for:</h4>
                     <ul>
@@ -44,7 +135,7 @@
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
                 <div class="highlight-card">
-                    <h3>Learning Labs</h3>
+                    <h3>2. Learning Labs</h3>
                     <p>Hands-on workshops for accelerated learning and application</p>
                     <h4 class="ideal-label">Ideal for:</h4>
                     <ul>
@@ -55,7 +146,7 @@
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
                 <div class="highlight-card">
-                    <h3>Campus Intensives</h3>
+                    <h3>3. Campus Intensives</h3>
                     <p>Tailored, campus-specific facilitation for immediate impact.</p>
                     <h4 class="ideal-label">Ideal for:</h4>
                     <ul>
@@ -69,8 +160,7 @@
         </div>
     </section>
 
-    <!-- How Our Services Work -->
-    <section class="highlights">
+    <section class="highlights tab-panel" data-tab-panel="services">
         <div class="container">
             <div class="section-header">
                 <h2>How Our Services Work</h2>
@@ -162,11 +252,10 @@
                     </div>
                 </div>
             </div>
-         
         </div>
     </section>
 
-    <section class="featured-clients">
+    <section class="featured-clients tab-panel" data-tab-panel="services">
         <div class="container">
             <div class="section-header">
                 <h2>Featured Clients</h2>
@@ -182,14 +271,31 @@
         </div>
     </section>
 
-    <!-- Ready to Partner CTA -->
-    <section class="toolkit-cta">
+    <section class="toolkit-cta tab-panel" data-tab-panel="services">
         <div class="container">
             <h2>Ready to Partner With NACUBO?</h2>
             <p>Join institutions transforming financial practices to advance student outcomes.</p>
             <div class="hero-buttons-group">
                 <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
             </div>
+        </div>
+    </section>
+
+    <section id="reports" class="events-section tab-panel" data-tab-panel="reports">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reports</h2>
+            </div>
+            <p class="hero-subtitle">Reports and research highlights coming soon.</p>
+        </div>
+    </section>
+
+    <section id="blogs" class="events-section tab-panel" data-tab-panel="blogs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blogs</h2>
+            </div>
+            <p class="hero-subtitle">Blog posts and insights coming soon.</p>
         </div>
     </section>
 

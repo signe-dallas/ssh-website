@@ -37,12 +37,13 @@ function setActiveNav() {
         'browse-toolkits': 'toolkits',
         'about-toolkits': 'toolkits',
         'what-are-toolkits': 'toolkits',
-        faq: 'insights',
+        faq: 'events-resources',
         events: 'events',
         'community-stories': 'community-stories',
         about: 'about',
         contact: 'contact',
-        'get-started': 'get-started'
+        'get-started': 'get-started',
+        'events-resources': 'events-resources'
     };
 
     const navKey = pageMap[pageKey] || pageKey;
@@ -256,6 +257,61 @@ function setupCustomSelects() {
     });
 }
 
+function setupServiceCardFlip() {
+    const cards = document.querySelectorAll('.framework-card');
+    if (cards.length === 0) {
+        return;
+    }
+
+    cards.forEach(card => {
+        const frontLink = card.querySelector('.framework-card-front .card-flip-link');
+        const backLink = card.querySelector('.framework-card-back .card-flip-back');
+        const backFace = card.querySelector('.framework-card-back');
+
+        if (frontLink) {
+            frontLink.addEventListener('click', event => {
+                event.preventDefault();
+                card.classList.add('is-flipped');
+            });
+        }
+
+        if (backLink) {
+            backLink.addEventListener('click', event => {
+                event.preventDefault();
+                card.classList.remove('is-flipped');
+            });
+        } else if (backFace) {
+            backFace.addEventListener('click', () => {
+                card.classList.remove('is-flipped');
+            });
+        }
+    });
+}
+
+function setupTabNavigation() {
+    const tabButtons = document.querySelectorAll('.tab-nav-link[data-tab-target]');
+    const tabPanels = document.querySelectorAll('.tab-panel[data-tab-panel]');
+
+    if (tabButtons.length === 0 || tabPanels.length === 0) {
+        return;
+    }
+
+    const activateTab = (target) => {
+        tabButtons.forEach(button => {
+            button.classList.toggle('is-active', button.dataset.tabTarget === target);
+        });
+        tabPanels.forEach(panel => {
+            panel.classList.toggle('is-active', panel.dataset.tabPanel === target);
+        });
+    };
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            activateTab(button.dataset.tabTarget);
+        });
+    });
+}
+
 function filterToolkits(value) {
     const grid = document.querySelector('.toolkits-grid');
     if (!grid) {
@@ -335,5 +391,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupRippleEffect();
     setupFAQAccordion();
     setupCustomSelects();
+    setupServiceCardFlip();
+    setupTabNavigation();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });
