@@ -477,7 +477,8 @@ p + p {
 .hero-buttons-group {
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -538,6 +539,17 @@ p + p {
     background-color: #d9d9d9;
 }
 
+.hero-buttons-group .btn-secondary {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #fff;
+}
+
+.hero-buttons-group .btn-secondary:hover {
+    background-color: #f3f3f3;
+    border-color: #f3f3f3;
+}
+
 .hero-image img {
     width: 100%;
     height: auto;
@@ -595,6 +607,11 @@ p + p {
     padding-top: 1.25rem;
 }
 
+.hero-carousel .hero-slide:first-child .hero-buttons-group {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .hero-slide-overlay .container {
     display: flex;
     justify-content: center;
@@ -610,18 +627,29 @@ p + p {
     opacity: 0.95;
 }
 
-.hero-slide-overlay .hero-buttons {
+.hero-slide-overlay .hero-buttons-group {
     justify-content: center;
 }
 
-.hero-slide-overlay .hero-buttons .btn {
+.hero-slide-overlay .hero-buttons-group .btn {
     background-color: rgba(255, 255, 255, 0.08);
     color: #fff;
     border-color: rgba(255, 255, 255, 0.85);
 }
 
-.hero-slide-overlay .hero-buttons .btn:hover {
+.hero-slide-overlay .hero-buttons-group .btn:hover {
     background-color: rgba(255, 255, 255, 0.18);
+}
+
+.hero-slide-overlay .hero-buttons-group .btn-secondary {
+    background-color: #fff;
+    color: #333;
+    border-color: #fff;
+}
+
+.hero-slide-overlay .hero-buttons-group .btn-secondary:hover {
+    background-color: #f3f3f3;
+    border-color: #f3f3f3;
 }
 
 .hero-carousel-control {
@@ -2759,8 +2787,15 @@ body[data-page="events-resources"] .hero-feature-cta {
         font-size: 2rem;
     }
 
-    .hero-buttons {
+    .hero-buttons-group {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-carousel .hero-slide:first-child .hero-buttons-group {
+        align-items: flex-start;
+        justify-content: flex-start;
     }
 
     .hero-carousel {
@@ -2771,8 +2806,8 @@ body[data-page="events-resources"] .hero-feature-cta {
         text-align: left;
     }
 
-    .hero-slide-overlay .hero-buttons {
-        justify-content: flex-start;
+    .hero-slide-overlay .hero-buttons-group {
+        justify-content: center;
     }
 
     .hero-carousel-control {
