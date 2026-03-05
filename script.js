@@ -312,6 +312,62 @@ function setupTabNavigation() {
     });
 }
 
+function setupHeroCarousel() {
+    const carousel = document.querySelector('.hero-carousel');
+    if (!carousel) {
+        return;
+    }
+
+    const slides = Array.from(carousel.querySelectorAll('[data-hero-slide]'));
+    const dots = Array.from(carousel.querySelectorAll('[data-hero-dot]'));
+    const prevBtn = carousel.querySelector('.hero-carousel-control.prev');
+    const nextBtn = carousel.querySelector('.hero-carousel-control.next');
+
+    if (slides.length < 2) {
+        return;
+    }
+
+    let currentIndex = slides.findIndex(slide => slide.classList.contains('is-active'));
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    }
+
+    const setActiveSlide = (index) => {
+        currentIndex = ((index % slides.length) + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+            slide.classList.toggle('is-active', slideIndex === currentIndex);
+        });
+        dots.forEach((dot, dotIndex) => {
+            const isActive = dotIndex === currentIndex;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-selected', String(isActive));
+        });
+    };
+
+    const nextSlide = () => setActiveSlide(currentIndex + 1);
+    const prevSlide = () => setActiveSlide(currentIndex - 1);
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+        });
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            setActiveSlide(index);
+        });
+    });
+
+    setActiveSlide(currentIndex);
+}
+
 function filterToolkits(value) {
     const grid = document.querySelector('.toolkits-grid');
     if (!grid) {
@@ -393,5 +449,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupCustomSelects();
     setupServiceCardFlip();
     setupTabNavigation();
+    setupHeroCarousel();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });
