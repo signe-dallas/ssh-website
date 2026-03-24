@@ -306,10 +306,19 @@ function setupTabNavigation() {
     };
 
     tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', event => {
+            event.preventDefault();
             activateTab(button.dataset.tabTarget);
+            if (button.getAttribute('href')) {
+                history.replaceState(null, '', button.getAttribute('href'));
+            }
         });
     });
+
+    const hashTarget = window.location.hash.replace('#', '').trim();
+    if (hashTarget && Array.from(tabPanels).some(panel => panel.dataset.tabPanel === hashTarget)) {
+        activateTab(hashTarget);
+    }
 }
 
 function setupHeroCarousel() {
@@ -437,6 +446,86 @@ function filterCommunityStories() {
     });
 }
 
+function setupBlogTabFilters() {
+    const blogsPanel = document.getElementById('blogs');
+    const topicSelect = document.getElementById('blog-tab-topic');
+    const audienceSelect = document.getElementById('blog-tab-audience');
+    const postList = document.querySelector('#blogs .blog-post-list');
+    const emptyState = document.getElementById('blog-tab-empty-state');
+    const cards = Array.from(document.querySelectorAll('#blogs .blog-post-card'));
+
+    if (cards.length === 0 || !topicSelect || !audienceSelect) {
+        return;
+    }
+
+    const normalize = (value) => (value || '').trim().toLowerCase();
+
+    const applyFilters = () => {
+        const selectedTopic = normalize(topicSelect.value);
+        const selectedAudience = normalize(audienceSelect.value);
+        const selectedDate = normalize(dateSelect?.value);
+        const hasTopicFilter = selectedTopic && selectedTopic !== 'all topics';
+        const hasAudienceFilter = selectedAudience && selectedAudience !== 'all audiences';
+        const hasDateFilter = selectedDate && selectedDate !== 'all dates';
+        const hasAnyFilter = hasTopicFilter || hasAudienceFilter || hasDateFilter;
+
+        cards.forEach(card => {
+            const cardTopic = normalize(card.dataset.topic);
+            const cardAudience = normalize(card.dataset.audience);
+            const topicMatches = !hasTopicFilter || cardTopic === selectedTopic;
+            const audienceMatches = !hasAudienceFilter || cardAudience === selectedAudience;
+            const shouldShow = topicMatches && audienceMatches;
+
+            card.style.display = shouldShow ? '' : 'none';
+
+            const topicPill = card.querySelector('[data-pill="topic"]');
+            const audiencePill = card.querySelector('[data-pill="audience"]');
+
+            if (topicPill) {
+                topicPill.hidden = !(shouldShow && hasTopicFilter && cardTopic === selectedTopic);
+            }
+
+            if (audiencePill) {
+                audiencePill.hidden = !(shouldShow && hasAudienceFilter && cardAudience === selectedAudience);
+            }
+        });
+
+        const visibleCards = cards.filter(card => card.style.display !== 'none').length;
+        if (emptyState) {
+            emptyState.hidden = visibleCards > 0;
+        }
+        if (postList) {
+            postList.style.display = visibleCards > 0 ? '' : 'none';
+        }
+
+        if (blogsPanel) {
+            blogsPanel.classList.toggle('filters-active', hasAnyFilter);
+        }
+
+        if (clearBtn) {
+            clearBtn.disabled = !hasAnyFilter;
+        }
+    };
+
+    topicSelect.addEventListener('change', applyFilters);
+    audienceSelect.addEventListener('change', applyFilters);
+
+    const dateSelect = document.getElementById('blog-tab-date');
+    const clearBtn = document.getElementById('blog-tab-clear-filters');
+    const selects = [topicSelect, audienceSelect, dateSelect].filter(Boolean);
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            selects.forEach(select => {
+                select.selectedIndex = 0;
+                select.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+        });
+    }
+
+    applyFilters();
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     await loadSharedShell();
     setupSmoothScrolling();
@@ -450,5 +539,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupServiceCardFlip();
     setupTabNavigation();
     setupHeroCarousel();
+    setupBlogTabFilters();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });

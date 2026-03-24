@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | NACUBO Student Success Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="blog" class="blog-page">
+    <div id="site-header"></div>
+
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-layout">
+                <div class="blog-hero-copy">
+                    <span class="pill">Blog</span>
+                    <h1>Ideas, case notes, and practical guidance for student success leaders.</h1>
+                    <p class="hero-subtitle">A low-fidelity blog hub designed to surface featured thinking first, then make it easy to scan by topic, audience, and content type.</p>
+                    <div class="hero-buttons">
+                        <a href="#featured-post" class="btn btn-primary">Read Featured Post</a>
+                        <a href="#latest-posts" class="btn btn-secondary">Browse Latest Articles</a>
+                    </div>
+                </div>
+
+                <aside class="blog-hero-feature" id="featured-post" aria-label="Featured blog post">
+                    <p class="blog-section-kicker">Featured post</p>
+                    <div class="blog-feature-media" aria-hidden="true">Featured Image Placeholder</div>
+                    <div class="blog-feature-meta">
+                        <span class="pill">Budgeting</span>
+                        <span>March 10, 2026</span>
+                        <span>6 min read</span>
+                    </div>
+                    <h2>How finance and student success teams can use shared metrics to make better funding decisions</h2>
+                    <p>This spotlight block gives the newest or highest-priority article visual weight and enough context for a user to decide whether to click.</p>
+                    <a href="#" class="event-cta">Read Article</a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section blog-discovery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Content Quickly</h2>
+            </div>
+            <div class="filter-bar">
+                <span class="filter-label filter-label-block">Browse by:</span>
+                <label class="filter-label" for="blog-topic">Topic</label>
+                <select id="blog-topic" class="filter-select">
+                    <option>All topics</option>
+                    <option>Budgeting</option>
+                    <option>Retention</option>
+                    <option>Equity</option>
+                    <option>Data and Assessment</option>
+                </select>
+                <label class="filter-label" for="blog-audience">Audience</label>
+                <select id="blog-audience" class="filter-select">
+                    <option>All audiences</option>
+                    <option>Business officers</option>
+                    <option>Provosts and academic leaders</option>
+                    <option>Student success teams</option>
+                </select>
+                <label class="filter-label" for="blog-format">Format</label>
+                <select id="blog-format" class="filter-select">
+                    <option>All formats</option>
+                    <option>Article</option>
+                    <option>Interview</option>
+                    <option>Toolkit explainer</option>
+                </select>
+            </div>
+
+            <div class="blog-utility-row">
+                <div class="blog-search-shell" role="search">
+                    <label class="sr-only" for="blog-search">Search blog articles</label>
+                    <input id="blog-search" type="search" placeholder="Search by keyword or phrase">
+                    <button type="button">Search</button>
+                </div>
+                <p class="blog-results-count">Showing 6 recent posts</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="latest-posts" class="events-section events-section-light">
+        <div class="container">
+            <div class="blog-content-layout">
+                <div class="blog-main-column">
+                    <div class="section-header">
+                        <h2>Latest Posts</h2>
+                        <a href="#" class="view-all">View all articles</a>
+                    </div>
+
+                    <div class="blog-post-list">
+                        <article class="blog-post-card blog-post-card-featured">
+                            <div class="blog-post-thumb" aria-hidden="true">Article Thumbnail</div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="pill">Finance Strategy</span>
+                                    <span>March 8, 2026</span>
+                                    <span>5 min read</span>
+                                </div>
+                                <h3>Three signs your institution is ready for a more equity-centered budget process</h3>
+                                <p>Use this larger lead card for the strongest secondary article. It gives space for a concise summary, publication details, and a clear next action.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">By Hub Editorial Team</span>
+                                    <a href="#" class="event-cta">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-card">
+                            <div class="blog-post-thumb" aria-hidden="true">Article Thumbnail</div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="pill">Retention</span>
+                                    <span>March 4, 2026</span>
+                                    <span>4 min read</span>
+                                </div>
+                                <h3>What a strong blog summary should tell a busy vice president in under 20 seconds</h3>
+                                <p>Compact article cards support easy scanning and make room for multiple posts above the fold on larger screens.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">By NACUBO Research</span>
+                                    <a href="#" class="event-cta">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-card">
+                            <div class="blog-post-thumb" aria-hidden="true">Article Thumbnail</div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="pill">Toolkit Tips</span>
+                                    <span>February 27, 2026</span>
+                                    <span>7 min read</span>
+                                </div>
+                                <h3>Turning a toolkit download into a campus conversation that actually moves work forward</h3>
+                                <p>Each card keeps title, metadata, summary, and CTA in a predictable order so users can compare options without friction.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">By Student Success Hub</span>
+                                    <a href="#" class="event-cta">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-card">
+                            <div class="blog-post-thumb" aria-hidden="true">Article Thumbnail</div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="pill">Case Notes</span>
+                                    <span>February 18, 2026</span>
+                                    <span>3 min read</span>
+                                </div>
+                                <h3>Lessons from institutions that paired budget analysis with student support redesign</h3>
+                                <p>This slot can later support real imagery, author portraits, or branded campaign thumbnails without changing the structure.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">By Guest Contributor</span>
+                                    <a href="#" class="event-cta">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <nav class="blog-pagination" aria-label="Pagination">
+                        <a href="#" class="blog-page-link is-active" aria-current="page">1</a>
+                        <a href="#" class="blog-page-link">2</a>
+                        <a href="#" class="blog-page-link">3</a>
+                        <a href="#" class="blog-page-link blog-page-link-next">Next</a>
+                    </nav>
+                </div>
+
+                <aside class="blog-sidebar" aria-label="Blog sidebar">
+                    <section class="blog-sidebar-card">
+                        <h3>Popular Topics</h3>
+                        <div class="blog-topic-list">
+                            <a href="#" class="pill pill-outline">Budgeting</a>
+                            <a href="#" class="pill pill-outline">Equity</a>
+                            <a href="#" class="pill pill-outline">Retention</a>
+                            <a href="#" class="pill pill-outline">Implementation</a>
+                            <a href="#" class="pill pill-outline">Data Use</a>
+                        </div>
+                    </section>
+
+                    <section class="blog-sidebar-card">
+                        <h3>Series and Collections</h3>
+                        <ul class="blog-sidebar-list">
+                            <li><a href="#">Toolkit explainers</a></li>
+                            <li><a href="#">Institutional spotlights</a></li>
+                            <li><a href="#">Event takeaways</a></li>
+                            <li><a href="#">Practice briefs</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="blog-sidebar-card blog-signup-card">
+                        <p class="blog-section-kicker">Stay updated</p>
+                        <h3>Get new articles in your inbox</h3>
+                        <p>Low-fidelity email capture block for a future newsletter or digest sign-up flow.</p>
+                        <form class="blog-signup-form">
+                            <label class="sr-only" for="blog-email">Email address</label>
+                            <input id="blog-email" type="email" placeholder="Email address">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="container">
+            <div class="blog-bottom-cta">
+                <div>
+                    <p class="blog-section-kicker">Editorial planning space</p>
+                    <h2>Highlight a campaign, report release, or cross-link to Events and Resources.</h2>
+                </div>
+                <div class="hero-buttons">
+                    <a href="events-and-resources.html" class="btn btn-primary">Explore Events and Resources</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact the Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="script.js"></script>
+</body>
+</html>

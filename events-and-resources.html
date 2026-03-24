@@ -12,27 +12,36 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <nav class="hero-breadcrumbs" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span aria-hidden="true">/</span>
+                    <span>Events and Resources</span>
+                </nav>
                 <h1>Events and Resources</h1>
                 <p class="hero-subtitle">Explore upcoming opportunities, past events, and resources that support student success work.</p>
             </div>
             <aside class="hero-feature-card">
                 <div class="hero-feature-label">Next Up</div>
-                <div class="hero-feature-meta">
-                    <span>March 12, 2026</span>
-                    <span>3:00 - 3:45 PM ET</span>
-                </div>
                 <h2>Data-Driven Retention: Aligning Budgets with Persistence Goals</h2>
-                <p>Learn how institutions use Student Success Hub toolkits to align budget allocations with retention and persistence goals, featuring case studies from participating institutions.</p>
-                <div class="hero-feature-speaker">
-                    <span class="hero-feature-initials">KR</span>
-                    <span>Kelli Rainey, Ed.D.</span>
+                <div class="hero-feature-meta">
+                    <span class="hero-feature-meta-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                            <path d="M8 3v4"></path>
+                            <path d="M16 3v4"></path>
+                            <path d="M3 10h18"></path>
+                        </svg>
+                        <span>March 12, 2026</span>
+                    </span>
+                    <span class="hero-feature-meta-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 7v5l3 2"></path>
+                        </svg>
+                        <span>3:00 - 3:45 PM ET</span>
+                    </span>
                 </div>
-                <div class="hero-feature-tags">
-                    <span>Retention</span>
-                    <span>Budgeting</span>
-                    <span>Data</span>
-                </div>
-                <a href="#" class="hero-feature-cta">Register for This Session <span aria-hidden="true">-></span></a>
+                <a href="#" class="hero-feature-cta">Register Free <span aria-hidden="true">-></span></a>
             </aside>
         </div>
     </section>
@@ -40,11 +49,11 @@
     <section class="tab-nav">
         <div class="container">
             <div class="tab-nav-row" aria-label="Events and resources navigation">
-                <button class="tab-nav-link is-active" type="button" data-tab-target="upcoming-events">Upcoming Events</button>
-                <button class="tab-nav-link" type="button" data-tab-target="past-events">Past Events</button>
-                <button class="tab-nav-link" type="button" data-tab-target="services">Services</button>
-                <button class="tab-nav-link" type="button" data-tab-target="reports">Reports</button>
-                <button class="tab-nav-link" type="button" data-tab-target="blogs">Blogs</button>
+                <a class="tab-nav-link is-active" href="#upcoming-events" data-tab-target="upcoming-events">Upcoming Events</a>
+                <a class="tab-nav-link" href="#past-events" data-tab-target="past-events">Past Events</a>
+                <a class="tab-nav-link" href="#services" data-tab-target="services">On-Demand Learning</a>
+                <a class="tab-nav-link" href="#reports" data-tab-target="reports">Reports</a>
+                <a class="tab-nav-link" href="#blogs" data-tab-target="blogs">Blogs</a>
             </div>
         </div>
     </section>
@@ -293,9 +302,131 @@
     <section id="blogs" class="events-section tab-panel" data-tab-panel="blogs">
         <div class="container">
             <div class="section-header">
-                <h2>Blogs</h2>
+                <h2>Latest Posts</h2>
             </div>
-            <p class="hero-subtitle">Blog posts and insights coming soon.</p>
+
+            <div class="filter-bar">
+                <span class="filter-label filter-label-block">Filter by:</span>
+                <label class="filter-label" for="blog-tab-topic">Topic</label>
+                <select id="blog-tab-topic" class="filter-select">
+                    <option>All topics</option>
+                    <option>Financial Acumen</option>
+                    <option>Finance and Data Collaboration</option>
+                </select>
+                <label class="filter-label" for="blog-tab-audience">Audience</label>
+                <select id="blog-tab-audience" class="filter-select">
+                    <option>All audiences</option>
+                    <option>Student Affairs Leaders</option>
+                    <option>CBOs and IR/IE Leaders</option>
+                </select>
+                <label class="filter-label" for="blog-tab-date">Date</label>
+                <select id="blog-tab-date" class="filter-select">
+                    <option>All dates</option>
+                    <option>Newest</option>
+                    <option>Oldest</option>
+                </select>
+                <button type="button" id="blog-tab-clear-filters" class="filter-clear-btn">Clear Filters</button>
+            </div>
+
+            <div class="blog-content-layout blog-content-layout-full">
+                <div class="blog-main-column">
+                  
+
+                    <div class="blog-post-list blog-post-list-two-column">
+                        <article class="blog-post-card" data-topic="Finance and Data Collaboration" data-audience="CBOs and IR/IE Leaders">
+                            <div class="blog-post-thumb" aria-hidden="true">Blog Image Placeholder</div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="blog-post-meta-main">
+                                        <span class="pill">New</span>
+                                        <span>[Month XX, XXXX]</span>
+                                        <span aria-hidden="true">|</span>
+                                        <span>6 min read</span>
+                                    </span>
+                                    <span class="pill" data-pill="topic" hidden>Finance and Data Collaboration</span>
+                                    <span class="pill pill-outline" data-pill="audience" hidden>CBOs and IR/IE Leaders</span>
+                                </div>
+                                <h3>Bridging Finance and Data: How CBOs and IR/IE Leaders Can Partner to Drive Student Success</h3>
+                                <p>Explore how collaboration between finance and data leaders enables smarter resource decisions and improved student outcomes.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">
+                                        <svg class="blog-author-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="8" r="3"></circle>
+                                            <circle cx="17" cy="9" r="2.5"></circle>
+                                            <path d="M3.5 19c0-2.8 2.3-5 5-5h1c2.7 0 5 2.2 5 5"></path>
+                                            <path d="M14 19c0-2.1 1.7-3.8 3.8-3.8h.7c1.5 0 2.8.9 3.5 2.1"></path>
+                                        </svg>
+                                        <span>[Author Name]</span>
+                                    </span>
+                                    <a href="blog-post-1.html" class="event-cta">Read the Blog <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-card blog-post-card-featured" data-topic="Financial Acumen" data-audience="Student Affairs Leaders">
+                            <div class="blog-post-thumb">
+                                <img src="Webinar-Blog-Financial-Acument.png" alt="Financial acumen webinar blog cover image">
+                            </div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="blog-post-meta-main">
+                                        <span>[Month XX, XXXX]</span>
+                                        <span aria-hidden="true">|</span>
+                                        <span>5 min read</span>
+                                    </span>
+                                    <span class="pill" data-pill="topic" hidden>Financial Acumen</span>
+                                    <span class="pill pill-outline" data-pill="audience" hidden>Student Affairs Leaders</span>
+                                </div>
+                                <h3>Elevating Financial Acumen in Student Affairs to Strengthen Student Success</h3>
+                                <p>Learn why financial literacy is essential for student affairs leaders and how it strengthens program impact and resource alignment.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">
+                                        <svg class="blog-author-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="8" r="3"></circle>
+                                            <circle cx="17" cy="9" r="2.5"></circle>
+                                            <path d="M3.5 19c0-2.8 2.3-5 5-5h1c2.7 0 5 2.2 5 5"></path>
+                                            <path d="M14 19c0-2.1 1.7-3.8 3.8-3.8h.7c1.5 0 2.8.9 3.5 2.1"></path>
+                                        </svg>
+                                        <span>Dr. Takeem Dean, Frank Dorsey, II and Dr. Kelli Rainey</span>
+                                    </span>
+                                    <a href="blog-post-2.html" class="event-cta">Read the Blog <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-card" data-topic="" data-audience="">
+                            <div class="blog-post-thumb" aria-hidden="true">Blog Image Placeholder</div>
+                            <div class="blog-post-body">
+                                <div class="blog-post-meta">
+                                    <span class="blog-post-meta-main">
+                                        <span>[Month XX, XXXX]</span>
+                                        <span aria-hidden="true">|</span>
+                                        <span>X min read</span>
+                                    </span>
+                                </div>
+                                <h3>Placeholder Blog Post Title</h3>
+                                <p>Placeholder summary text for a third blog card. Replace this copy with final post description.</p>
+                                <div class="blog-post-footer">
+                                    <span class="blog-author">
+                                        <svg class="blog-author-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                            <circle cx="9" cy="8" r="3"></circle>
+                                            <circle cx="17" cy="9" r="2.5"></circle>
+                                            <path d="M3.5 19c0-2.8 2.3-5 5-5h1c2.7 0 5 2.2 5 5"></path>
+                                            <path d="M14 19c0-2.1 1.7-3.8 3.8-3.8h.7c1.5 0 2.8.9 3.5 2.1"></path>
+                                        </svg>
+                                        <span>[Author Name]</span>
+                                    </span>
+                                    <a href="blog-template.html" class="event-cta">View Blog Template <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                    <p id="blog-tab-empty-state" class="blog-empty-state" hidden>
+                        No blog posts match your filters. Try selecting a different topic or audience, or use <strong>Clear Filters</strong> to view all posts.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
