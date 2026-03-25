@@ -526,34 +526,45 @@ function setupBlogTabFilters() {
     applyFilters();
 }
 
-function setupFeaturedBlogAuthorToggle() {
-    const featuredCard = document.querySelector('#blogs .blog-post-card-featured');
-    if (!featuredCard) {
+function setupBlogAuthorToggles() {
+    const toggleButtons = Array.from(document.querySelectorAll('#blogs [data-author-toggle]'));
+    if (toggleButtons.length === 0) {
         return;
     }
 
-    const authorList = featuredCard.querySelector('.blog-author-list');
-    const toggleButton = featuredCard.querySelector('[data-author-toggle]');
-    if (!authorList || !toggleButton) {
-        return;
-    }
+    toggleButtons.forEach(toggleButton => {
+        const controlsId = toggleButton.getAttribute('aria-controls');
+        const authorList = controlsId
+            ? document.getElementById(controlsId)
+            : toggleButton.closest('.blog-post-footer')?.querySelector('.blog-author-list');
 
-    const authors = Array.from(authorList.querySelectorAll('.blog-author'));
-    if (authors.length <= 1) {
-        toggleButton.hidden = true;
-        return;
-    }
+        if (!authorList) {
+            toggleButton.hidden = true;
+            return;
+        }
 
-    const additionalCount = authors.length - 1;
+        const authors = Array.from(authorList.querySelectorAll('.blog-author'));
+        if (authors.length <= 1) {
+            toggleButton.hidden = true;
+            authorList.classList.remove('is-collapsible-authors');
+            return;
+        }
 
-    toggleButton.textContent = `+${additionalCount} more authors`;
-    toggleButton.setAttribute('aria-label', `Show ${additionalCount} additional authors`);
-    toggleButton.setAttribute('aria-expanded', 'false');
+        const additionalCount = authors.length - 1;
+        const noun = additionalCount === 1 ? 'author' : 'authors';
 
-    toggleButton.addEventListener('click', () => {
-        authorList.classList.add('is-expanded');
-        toggleButton.hidden = true;
-        toggleButton.setAttribute('aria-expanded', 'true');
+        authorList.classList.add('is-collapsible-authors');
+        authorList.classList.remove('is-expanded');
+        toggleButton.hidden = false;
+        toggleButton.textContent = `+${additionalCount} more ${noun}`;
+        toggleButton.setAttribute('aria-label', `Show ${additionalCount} additional ${noun}`);
+        toggleButton.setAttribute('aria-expanded', 'false');
+
+        toggleButton.addEventListener('click', () => {
+            authorList.classList.add('is-expanded');
+            toggleButton.hidden = true;
+            toggleButton.setAttribute('aria-expanded', 'true');
+        });
     });
 }
 
@@ -571,6 +582,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupTabNavigation();
     setupHeroCarousel();
     setupBlogTabFilters();
-    setupFeaturedBlogAuthorToggle();
+    setupBlogAuthorToggles();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });

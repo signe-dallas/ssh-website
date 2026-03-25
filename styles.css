@@ -4934,15 +4934,15 @@ body[data-page="events-resources"] .blog-author-list {
     gap: 0.1rem;
 }
 
-body[data-page="events-resources"] .blog-post-card-featured .blog-author-list {
+body[data-page="events-resources"] .blog-author-list.is-collapsible-authors {
     gap: 0.16rem;
 }
 
-body[data-page="events-resources"] .blog-post-card-featured .blog-author-list .blog-author:not(:first-child) {
+body[data-page="events-resources"] .blog-author-list.is-collapsible-authors .blog-author:not(:first-child) {
     display: none;
 }
 
-body[data-page="events-resources"] .blog-post-card-featured .blog-author-list.is-expanded .blog-author {
+body[data-page="events-resources"] .blog-author-list.is-collapsible-authors.is-expanded .blog-author {
     display: inline-flex;
 }
 
@@ -4950,9 +4950,9 @@ body[data-page="events-resources"] .blog-post-card-featured .blog-author {
     align-items: flex-start;
 }
 
-body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-btn {
+body[data-page="events-resources"] .blog-author-more-btn {
     align-self: flex-start;
-    margin-top: -0.4rem;
+    margin-top: -0.34rem;
     margin-bottom: 0.1rem;
     margin-left: calc(15px + 0.45rem);
     padding: 0;
@@ -4965,8 +4965,8 @@ body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-bt
     cursor: pointer;
 }
 
-body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-btn:hover,
-body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-btn:focus-visible {
+body[data-page="events-resources"] .blog-author-more-btn:hover,
+body[data-page="events-resources"] .blog-author-more-btn:focus-visible {
     text-decoration: underline;
 }
 
