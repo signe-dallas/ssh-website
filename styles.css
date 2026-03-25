@@ -4922,21 +4922,83 @@ body[data-page="events-resources"] .blog-post-footer {
 
 body[data-page="events-resources"] .blog-author {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.45rem;
-    font-size: 0.9rem;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+body[data-page="events-resources"] .blog-author-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-list {
+    gap: 0.16rem;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-list .blog-author:not(:first-child) {
+    display: none;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-list.is-expanded .blog-author {
+    display: inline-flex;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author {
+    align-items: flex-start;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-btn {
+    align-self: flex-start;
+    margin-top: -0.4rem;
+    margin-bottom: 0.1rem;
+    margin-left: calc(15px + 0.45rem);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #1456a0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-btn:hover,
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-more-btn:focus-visible {
+    text-decoration: underline;
+}
+
+body[data-page="events-resources"] .blog-author-name {
+    font-weight: 700;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+body[data-page="events-resources"] .blog-author-separator {
+    margin-inline: -0.12rem;
+}
+
+body[data-page="events-resources"] .blog-post-card-featured .blog-author-institution {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 1.2;
+    align-self: baseline;
 }
 
 body[data-page="events-resources"] .blog-author-icon {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     stroke: currentColor;
     fill: none;
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
     flex: 0 0 auto;
-    margin-top: 0.3rem;
+    margin-top: 0;
 }
 
 .blog-author {

@@ -526,6 +526,37 @@ function setupBlogTabFilters() {
     applyFilters();
 }
 
+function setupFeaturedBlogAuthorToggle() {
+    const featuredCard = document.querySelector('#blogs .blog-post-card-featured');
+    if (!featuredCard) {
+        return;
+    }
+
+    const authorList = featuredCard.querySelector('.blog-author-list');
+    const toggleButton = featuredCard.querySelector('[data-author-toggle]');
+    if (!authorList || !toggleButton) {
+        return;
+    }
+
+    const authors = Array.from(authorList.querySelectorAll('.blog-author'));
+    if (authors.length <= 1) {
+        toggleButton.hidden = true;
+        return;
+    }
+
+    const additionalCount = authors.length - 1;
+
+    toggleButton.textContent = `+${additionalCount} more authors`;
+    toggleButton.setAttribute('aria-label', `Show ${additionalCount} additional authors`);
+    toggleButton.setAttribute('aria-expanded', 'false');
+
+    toggleButton.addEventListener('click', () => {
+        authorList.classList.add('is-expanded');
+        toggleButton.hidden = true;
+        toggleButton.setAttribute('aria-expanded', 'true');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async function() {
     await loadSharedShell();
     setupSmoothScrolling();
@@ -540,5 +571,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     setupTabNavigation();
     setupHeroCarousel();
     setupBlogTabFilters();
+    setupFeaturedBlogAuthorToggle();
     console.log('NACUBO Student Success Hub - Page Loaded');
 });
