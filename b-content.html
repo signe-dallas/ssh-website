@@ -7,8 +7,10 @@
     <script>
         (function () {
             var path = window.location.pathname || "";
-            var isExtensionlessBContent = /\/b-content\/?$/.test(path) && !/\.html$/i.test(path);
-            if (isExtensionlessBContent) {
+            // Only add <base> when URL ends with "/b-content/" (directory-style route).
+            // For "/b-content" (no trailing slash), relative asset paths already resolve correctly.
+            var needsDirectoryBase = /\/b-content\/$/.test(path) && !/\.html$/i.test(path);
+            if (needsDirectoryBase) {
                 document.write('<base href="../">');
             }
         })();
