@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B Content | NACUBO Student Success Hub</title>
+    <script>
+        (function () {
+            var path = window.location.pathname || "";
+            var isExtensionlessBContent = /\/b-content\/?$/.test(path) && !/\.html$/i.test(path);
+            if (isExtensionlessBContent) {
+                document.write('<base href="../">');
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
