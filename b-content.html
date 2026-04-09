@@ -968,6 +968,38 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
             const topFrame = document.querySelector(".is-content-top-frame");
             if (!topFrame) return;
             let breadcrumbObserver = null;
+            const frameSources = [
+                "is-content.html?mode=bcontent#bcontent",
+                "is-content?mode=bcontent#bcontent"
+            ];
+            let frameSourceIndex = 0;
+
+            const tryNextFrameSource = () => {
+                if (frameSourceIndex >= frameSources.length - 1) return false;
+                frameSourceIndex += 1;
+                topFrame.setAttribute("src", frameSources[frameSourceIndex]);
+                return true;
+            };
+
+            const recoverIfNotFoundFrame = () => {
+                try {
+                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
+                    if (!doc) return false;
+                    const title = (doc.title || "").toLowerCase();
+                    const bodyText = ((doc.body && doc.body.textContent) || "").slice(0, 1200).toLowerCase();
+                    const looksNotFound =
+                        title.includes("404") ||
+                        title.includes("not found") ||
+                        bodyText.includes("404") ||
+                        bodyText.includes("not found");
+                    if (looksNotFound) {
+                        return tryNextFrameSource();
+                    }
+                } catch (e) {
+                    // Keep silent if frame is not accessible.
+                }
+                return false;
+            };
 
             const updateBreadcrumb = () => {
                 try {
@@ -1050,7 +1082,12 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
                 }
             };
 
+            topFrame.addEventListener("error", () => {
+                tryNextFrameSource();
+            });
+
             topFrame.addEventListener("load", () => {
+                if (recoverIfNotFoundFrame()) return;
                 updateBreadcrumb();
                 resizeFrame();
                 watchBreadcrumb();
@@ -1071,6 +1108,9 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
                 }, 500);
             });
             window.addEventListener("resize", resizeFrame);
+            if (topFrame.getAttribute("src") !== frameSources[0]) {
+                topFrame.setAttribute("src", frameSources[0]);
+            }
             updateBreadcrumb();
             resizeFrame();
             forceBContentBreadcrumb();

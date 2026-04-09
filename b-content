@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B Content Redirect</title>
+    <meta http-equiv="refresh" content="0; url=b-content.html">
+    <link rel="canonical" href="b-content.html">
+    <script>
+        window.location.replace("b-content.html");
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a href="b-content.html">b-content.html</a>...</p>
+</body>
+</html>
