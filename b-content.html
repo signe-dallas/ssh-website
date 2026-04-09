@@ -997,36 +997,13 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
                 }
             };
 
-            const resizeFrame = () => {
-                try {
-                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
-                    if (!doc || !doc.body || !doc.documentElement) return;
-                    const h = Math.max(
-                        doc.body.scrollHeight,
-                        doc.documentElement.scrollHeight,
-                        doc.body.offsetHeight,
-                        doc.documentElement.offsetHeight
-                    );
-                    if (h && Number.isFinite(h)) {
-                        topFrame.style.height = h + "px";
-                    }
-                } catch (e) {
-                    // Keep silent if frame is not accessible.
-                }
-            };
-
             topFrame.addEventListener("load", () => {
                 syncBreadcrumb();
-                resizeFrame();
                 setTimeout(syncBreadcrumb, 200);
                 setTimeout(syncBreadcrumb, 800);
-                setTimeout(resizeFrame, 200);
-                setTimeout(resizeFrame, 800);
             });
 
-            window.addEventListener("resize", resizeFrame);
             syncBreadcrumb();
-            resizeFrame();
         })();
     </script>
     <script src="script.js"></script>
