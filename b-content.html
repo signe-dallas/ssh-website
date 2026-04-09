@@ -1003,6 +1003,24 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
                 }
             };
 
+            const resizeFrame = () => {
+                try {
+                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
+                    if (!doc || !doc.body || !doc.documentElement) return;
+                    const h = Math.max(
+                        doc.body.scrollHeight,
+                        doc.documentElement.scrollHeight,
+                        doc.body.offsetHeight,
+                        doc.documentElement.offsetHeight
+                    );
+                    if (h && Number.isFinite(h)) {
+                        topFrame.style.height = `${h}px`;
+                    }
+                } catch (e) {
+                    // Keep silent if frame is not accessible.
+                }
+            };
+
             const forceBContentBreadcrumb = () => {
                 const wrap = document.querySelector(".is-content-top-frame-wrap");
                 if (!wrap) return;
@@ -1023,20 +1041,27 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
 
             topFrame.addEventListener("load", () => {
                 updateBreadcrumb();
+                resizeFrame();
                 watchBreadcrumb();
                 forceBContentBreadcrumb();
                 setTimeout(updateBreadcrumb, 200);
                 setTimeout(updateBreadcrumb, 800);
                 setTimeout(updateBreadcrumb, 1800);
+                setTimeout(resizeFrame, 200);
+                setTimeout(resizeFrame, 800);
+                setTimeout(resizeFrame, 1800);
                 const startedAt = Date.now();
                 const timer = setInterval(() => {
                     updateBreadcrumb();
+                    resizeFrame();
                     if (Date.now() - startedAt > 10000) {
                         clearInterval(timer);
                     }
                 }, 500);
             });
+            window.addEventListener("resize", resizeFrame);
             updateBreadcrumb();
+            resizeFrame();
             forceBContentBreadcrumb();
         })();
     </script>
