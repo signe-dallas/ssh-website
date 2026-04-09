@@ -415,8 +415,11 @@ function filterCommunityStories() {
     const toolkitSelect = document.querySelector('[data-select="filter-toolkit"]');
 
     const getSelectedValue = (select) => {
-        const selected = select?.querySelector('[role="option"][aria-selected="true"]');
-        return selected?.dataset.value || '';
+        if (!select) {
+            return '';
+        }
+        const selected = select.querySelector('[role="option"][aria-selected="true"]');
+        return selected && selected.dataset ? (selected.dataset.value || '') : '';
     };
 
     const topicValue = getSelectedValue(topicSelect);
@@ -463,7 +466,7 @@ function setupBlogTabFilters() {
     const applyFilters = () => {
         const selectedTopic = normalize(topicSelect.value);
         const selectedAudience = normalize(audienceSelect.value);
-        const selectedDate = normalize(dateSelect?.value);
+        const selectedDate = normalize(dateSelect ? dateSelect.value : '');
         const hasTopicFilter = selectedTopic && selectedTopic !== 'all topics';
         const hasAudienceFilter = selectedAudience && selectedAudience !== 'all audiences';
         const hasDateFilter = selectedDate && selectedDate !== 'all dates';
@@ -536,7 +539,10 @@ function setupBlogAuthorToggles() {
         const controlsId = toggleButton.getAttribute('aria-controls');
         const authorList = controlsId
             ? document.getElementById(controlsId)
-            : toggleButton.closest('.blog-post-footer')?.querySelector('.blog-author-list');
+            : (function() {
+                const footer = toggleButton.closest('.blog-post-footer');
+                return footer ? footer.querySelector('.blog-author-list') : null;
+            })();
 
         if (!authorList) {
             toggleButton.hidden = true;
