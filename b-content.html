@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B Content | NACUBO Student Success Hub</title>
-    <script>
-        (function () {
-            var path = window.location.pathname || "";
-            // Only add <base> when URL ends with "/b-content/" (directory-style route).
-            // For "/b-content" (no trailing slash), relative asset paths already resolve correctly.
-            var needsDirectoryBase = /\/b-content\/$/.test(path) && !/\.html$/i.test(path);
-            if (needsDirectoryBase) {
-                document.write('<base href="../">');
-            }
-        })();
-    </script>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -638,7 +627,7 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
 </head>
 <body data-page="events-resources" class="blog-template-page b-content-page">
     <div class="is-content-top-frame-wrap" aria-label="Top Navigation and Hero">
-        <iframe class="is-content-top-frame" src="is-content.html?mode=bcontent#bcontent" title="Is Content Top Section" scrolling="no" loading="eager"></iframe>
+        <iframe class="is-content-top-frame" src="https://nacubo-ssh.agencyq.ai/institutional-stories/alamo-colleges-district?mode=bcontent#bcontent" title="Is Content Top Section" scrolling="no" loading="eager"></iframe>
     </div>
 
     <div class="events-section">
@@ -963,160 +952,6 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
     </div>
 
     <div id="site-footer"></div>
-    <script>
-        (function () {
-            const topFrame = document.querySelector(".is-content-top-frame");
-            if (!topFrame) return;
-            let breadcrumbObserver = null;
-            const frameSources = [
-                "is-content.html?mode=bcontent#bcontent",
-                "is-content?mode=bcontent#bcontent"
-            ];
-            let frameSourceIndex = 0;
-
-            const tryNextFrameSource = () => {
-                if (frameSourceIndex >= frameSources.length - 1) return false;
-                frameSourceIndex += 1;
-                topFrame.setAttribute("src", frameSources[frameSourceIndex]);
-                return true;
-            };
-
-            const recoverIfNotFoundFrame = () => {
-                try {
-                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
-                    if (!doc) return false;
-                    const title = (doc.title || "").toLowerCase();
-                    const bodyText = ((doc.body && doc.body.textContent) || "").slice(0, 1200).toLowerCase();
-                    const looksNotFound =
-                        title.includes("404") ||
-                        title.includes("not found") ||
-                        bodyText.includes("404") ||
-                        bodyText.includes("not found");
-                    if (looksNotFound) {
-                        return tryNextFrameSource();
-                    }
-                } catch (e) {
-                    // Keep silent if frame is not accessible.
-                }
-                return false;
-            };
-
-            const updateBreadcrumb = () => {
-                try {
-                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
-                    if (!doc) return;
-
-                    const breadcrumbNav = doc.querySelector('nav[aria-label="Breadcrumb"]');
-                    if (!breadcrumbNav) return;
-
-                    const crumbLinks = breadcrumbNav.querySelectorAll("ol li a");
-                    const crumbCurrent = breadcrumbNav.querySelector('ol li [aria-current="page"]');
-
-                    if (crumbLinks.length > 1) {
-                        crumbLinks[1].textContent = "Event and recources";
-                    }
-                    const institutionalLinks = breadcrumbNav.querySelectorAll('a[href*="institutional-stories"]');
-                    institutionalLinks.forEach((link) => {
-                        link.textContent = "Event and recources";
-                    });
-                    if (crumbCurrent) {
-                        crumbCurrent.textContent = "Blog Post Template";
-                    }
-
-                    const mainNav = doc.querySelector('nav[aria-label="Main navigation"]');
-                    if (mainNav) {
-                        const navLinks = mainNav.querySelectorAll("a");
-                        navLinks.forEach((link) => {
-                            const href = link.getAttribute("href") || "";
-                            if (href.includes("/events-and-resources")) {
-                                link.setAttribute("aria-current", "page");
-                                link.classList.remove("text-charcoal", "hover:text-primary", "hover:bg-gray-lighter");
-                                link.classList.add("text-primary", "bg-primary-light");
-                            } else if (href.includes("/institutional-stories")) {
-                                if (link.getAttribute("aria-current") === "page") {
-                                    link.removeAttribute("aria-current");
-                                }
-                                link.classList.remove("text-primary", "bg-primary-light");
-                                link.classList.add("text-charcoal", "hover:text-primary", "hover:bg-gray-lighter");
-                            }
-                        });
-                    }
-                } catch (e) {
-                    // Keep silent if frame is not accessible.
-                }
-            };
-
-            const resizeFrame = () => {
-                try {
-                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
-                    if (!doc || !doc.body || !doc.documentElement) return;
-                    const h = Math.max(
-                        doc.body.scrollHeight,
-                        doc.documentElement.scrollHeight,
-                        doc.body.offsetHeight,
-                        doc.documentElement.offsetHeight
-                    );
-                    if (h && Number.isFinite(h)) {
-                        topFrame.style.height = `${h}px`;
-                    }
-                } catch (e) {
-                    // Keep silent if frame is not accessible.
-                }
-            };
-
-            const forceBContentBreadcrumb = () => {
-                const wrap = document.querySelector(".is-content-top-frame-wrap");
-                if (!wrap) return;
-                wrap.setAttribute("data-breadcrumb-override", "true");
-            };
-
-            const watchBreadcrumb = () => {
-                try {
-                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
-                    if (!doc || !doc.body) return;
-                    if (breadcrumbObserver) breadcrumbObserver.disconnect();
-                    breadcrumbObserver = new MutationObserver(updateBreadcrumb);
-                    breadcrumbObserver.observe(doc.body, { childList: true, subtree: true, characterData: true });
-                } catch (e) {
-                    // Keep silent if frame is not accessible.
-                }
-            };
-
-            topFrame.addEventListener("error", () => {
-                tryNextFrameSource();
-            });
-
-            topFrame.addEventListener("load", () => {
-                if (recoverIfNotFoundFrame()) return;
-                updateBreadcrumb();
-                resizeFrame();
-                watchBreadcrumb();
-                forceBContentBreadcrumb();
-                setTimeout(updateBreadcrumb, 200);
-                setTimeout(updateBreadcrumb, 800);
-                setTimeout(updateBreadcrumb, 1800);
-                setTimeout(resizeFrame, 200);
-                setTimeout(resizeFrame, 800);
-                setTimeout(resizeFrame, 1800);
-                const startedAt = Date.now();
-                const timer = setInterval(() => {
-                    updateBreadcrumb();
-                    resizeFrame();
-                    if (Date.now() - startedAt > 10000) {
-                        clearInterval(timer);
-                    }
-                }, 500);
-            });
-            window.addEventListener("resize", resizeFrame);
-            if (topFrame.getAttribute("src") !== frameSources[0]) {
-                topFrame.setAttribute("src", frameSources[0]);
-            }
-            updateBreadcrumb();
-            resizeFrame();
-            forceBContentBreadcrumb();
-        })();
-    </script>
-    
     <script src="script.js"></script>
 </body>
 </html>
