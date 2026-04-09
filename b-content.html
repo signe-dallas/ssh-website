@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Content | NACUBO Student Success Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            color: #212427 !important;
+            font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif !important;
+        }
+        .b-content-page {
+            --b-charcoal: #212427 !important;
+            --b-text: #212427 !important;
+        }
+        .b-content-page,
+        .b-content-page .blog-template-content,
+        .b-content-page .blog-template-content p,
+        .b-content-page .blog-template-content li,
+        .b-content-page .blog-template-content .post-meta,
+        .b-content-page .blog-author-copy .blog-author-title {
+            color: #212427 !important;
+        }
+        .b-content-page .blog-template-content h1 {
+            font-size: 2.25rem !important;
+            line-height: 1.3 !important;
+            font-weight: 600 !important;
+        }
+        .b-content-page .blog-template-content h2 {
+            font-size: 1.75rem !important;
+            line-height: 1.25 !important;
+            font-weight: 600 !important;
+            color: #212427 !important;
+            margin-top: 2.5rem !important;
+            margin-bottom: 0.75rem !important;
+        }
+        .b-content-page .blog-template-content h3 {
+            font-size: 1.5rem !important;
+            line-height: 1.35 !important;
+            font-weight: 600 !important;
+            color: #212427 !important;
+            margin-top: 2rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+        .b-content-page .blog-template-content h4 {
+            font-size: 1.125rem !important;
+            line-height: 1.45 !important;
+            font-weight: 600 !important;
+            color: #212427 !important;
+            margin-top: 1.5rem !important;
+            margin-bottom: 0.25rem !important;
+        }
+        .b-content-page .blog-template-content p,
+        .b-content-page .blog-template-content li {
+            font-size: 18px !important;
+            line-height: 1.75 !important;
+        }
+        .b-content-page .blog-template-content .post-meta {
+            font-size: 15px !important;
+            margin-top: 0 !important;
+            padding-top: 0.75rem !important;
+            padding-bottom: 1.25rem !important;
+        }
+        .b-content-page .blog-template-content p {
+            margin-bottom: 0.5rem !important;
+        }
+        .b-content-page .blog-template-content ul,
+        .b-content-page .blog-template-content ol {
+            margin-top: 1rem !important;
+            margin-bottom: 1.5rem !important;
+            padding-left: 1.5rem !important;
+        }
+        .b-content-page .blog-template-content p + ul,
+        .b-content-page .blog-template-content p + ol {
+            margin-top: 0.75rem !important;
+        }
+        .b-content-page .blog-template-content li {
+            margin-bottom: 0.5rem !important;
+        }
+        .b-content-page .blog-template-content li > ul,
+        .b-content-page .blog-template-content li > ol {
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.25rem !important;
+        }
+        .b-content-page .blog-template-content li > ul > li,
+        .b-content-page .blog-template-content li > ol > li {
+            margin-bottom: 0.5rem !important;
+        }
+        .b-content-page .blog-template-content hr.border-gray-light {
+            border: 0;
+            border-top: 1px solid #e5e5e5 !important;
+            margin-top: 0.75rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        .b-content-page .blog-template-content hr.border-gray-light + .quick-takeaways {
+            margin-top: 1rem;
+        }
+        .b-content-page .blog-template-content .blog-template-divider {
+            border-top-color: #e5e5e5 !important;
+        }
+        .b-content-page .quick-takeaways {
+            background: #eaf0f2;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.25rem 0 2rem;
+        }
+        .b-content-page .quick-takeaways h2 {
+            margin-top: 0 !important;
+        }
+        .b-content-page .quick-takeaways ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.75rem 0 0 !important;
+            margin-left: 0.6rem !important;
+        }
+        .b-content-page .quick-takeaways li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            margin: 0 !important;
+            padding-bottom: 0.68rem !important;
+            line-height: 1.55 !important;
+            margin-left: -0.6rem !important;
+        }
+        .b-content-page .quick-takeaways li:last-child {
+            padding-bottom: 0 !important;
+        }
+        .b-content-page .quick-takeaways li .takeaway-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #107d64;
+            flex-shrink: 0;
+            margin-top: 0.30rem;
+        }
+        .b-content-page .blog-template-meta h3,
+        .b-content-page .blog-author-section h2,
+        .b-content-page .blog-author-copy h3,
+        .b-content-page .blog-template-content strong,
+        .b-content-page .blog-template-content .post-meta strong {
+            color: #212427 !important;
+        }
+        .b-content-page .blog-template-meta h3 {
+            font-size: 1.5rem !important;
+            line-height: 1.35 !important;
+            font-weight: 600 !important;
+            margin-bottom: 1rem !important;
+        }
+        .b-content-page .blog-template-content {
+            max-width: 80ch;
+        }
+        .b-content-page .blog-template-content img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .b-content-page .blog-template-meta {
+            position: sticky;
+            top: 16px !important;
+            align-self: start;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.btn-primary {
+            background: #0f6f87 !important;
+            border: 1px solid #0f6f87 !important;
+            color: #ffffff !important;
+            border-radius: 4px !important;
+            padding: 0.9rem 1.15rem !important;
+            font-weight: 700 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: auto !important;
+            text-decoration: none !important;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.btn-primary::after {
+            content: "";
+            width: 16px;
+            height: 16px;
+            margin-left: 0.75rem;
+            transform: translateY(1px);
+            flex: 0 0 16px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 16px 16px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E");
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.btn-primary:hover {
+            background: #0a5366 !important;
+            border-color: #0a5366 !important;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.btn-secondary {
+            border-radius: 4px !important;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.download-resource-link {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.download-resource-link svg {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.download-resource-link svg path {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.explore-toolkit-link {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.explore-toolkit-link svg {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+        }
+        .b-content-page .blog-template-sidebar-actions .btn.explore-toolkit-link svg path {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .b-content-page .share-action-btn {
+            border-radius: 4px !important;
+        }
+    /* === shared-content-rhythm:start === */
+/* Unified spacing system shared by is-content and b-content */
+main .lg\:col-span-2 .space-y-4 > :not([hidden]) ~ :not([hidden]),
+main .lg\:col-span-2 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0 !important;
+}
+
+main .lg\:col-span-2 h1,
+.b-content-page .blog-template-content h1 {
+  font-size: 2.25rem !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+}
+
+main .lg\:col-span-2 h2,
+.b-content-page .blog-template-content h2 {
+  font-size: 1.75rem !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+  color: #212427 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+main .lg\:col-span-2 h3,
+.b-content-page .blog-template-content h3 {
+  font-size: 1.5rem !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+  color: #212427 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+main .lg\:col-span-2 h4,
+.b-content-page .blog-template-content h4 {
+  font-size: 1.125rem !important;
+  line-height: 1.45 !important;
+  font-weight: 600 !important;
+  color: #212427 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+main .lg\:col-span-2 p,
+main .lg\:col-span-2 li,
+.b-content-page .blog-template-content p,
+.b-content-page .blog-template-content li {
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+}
+
+main .lg\:col-span-2 p,
+.b-content-page .blog-template-content p {
+  margin-bottom: 0.5rem !important;
+}
+
+main .lg\:col-span-2 p + h2,
+.b-content-page .blog-template-content p + h2 {
+  margin-top: 2.25rem !important;
+}
+
+main .lg\:col-span-2 ul,
+main .lg\:col-span-2 ol,
+.b-content-page .blog-template-content ul,
+.b-content-page .blog-template-content ol {
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+main .lg\:col-span-2 p + ul,
+main .lg\:col-span-2 p + ol,
+.b-content-page .blog-template-content p + ul,
+.b-content-page .blog-template-content p + ol {
+  margin-top: 0.75rem !important;
+}
+
+main .lg\:col-span-2 li,
+.b-content-page .blog-template-content li {
+  margin-bottom: 0.5rem !important;
+}
+
+main .lg\:col-span-2 li > ul,
+main .lg\:col-span-2 li > ol,
+.b-content-page .blog-template-content li > ul,
+.b-content-page .blog-template-content li > ol {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+main .lg\:col-span-2 li > ul > li,
+main .lg\:col-span-2 li > ol > li,
+.b-content-page .blog-template-content li > ul > li,
+.b-content-page .blog-template-content li > ol > li {
+  margin-bottom: 0.5rem !important;
+}
+
+main hr.border-gray-light,
+.b-content-page .blog-template-content hr.border-gray-light {
+  border: 0 !important;
+  border-top: 1px solid #e5e5e5 !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Preserve Quick Takeaways custom spacing */
+main .quick-takeaways h2,
+.b-content-page .quick-takeaways h2 {
+  margin-top: 0 !important;
+}
+main .quick-takeaways ul,
+.b-content-page .quick-takeaways ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0.75rem 0 0 !important;
+  margin-left: 0.6rem !important;
+}
+main .quick-takeaways li,
+.b-content-page .quick-takeaways li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  margin: 0 !important;
+  margin-left: -0.6rem !important;
+  padding-bottom: 0.68rem !important;
+  line-height: 1.55 !important;
+}
+main .quick-takeaways li:last-child,
+.b-content-page .quick-takeaways li:last-child {
+  padding-bottom: 0 !important;
+}
+/* === shared-content-rhythm:end === */
+/* Content rhythm synced from is-content page */
+.b-content-page .blog-template-content p {
+  line-height: 1.7 !important;
+  margin-bottom: 0.5rem !important;
+}
+.b-content-page .blog-template-content ul,
+.b-content-page .blog-template-content ol {
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-left: 1.55rem !important;
+}
+.b-content-page .blog-template-content p + ul,
+.b-content-page .blog-template-content p + ol {
+  margin-top: 0.75rem !important;
+}
+.b-content-page .blog-template-content li {
+  line-height: 1.5 !important;
+  margin-bottom: 0.6rem !important;
+}
+.b-content-page .blog-template-content li > ul,
+.b-content-page .blog-template-content li > ol {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.b-content-page .blog-template-content li > ul > li,
+.b-content-page .blog-template-content li > ol > li {
+  margin-bottom: 0.6rem !important;
+  line-height: 1.5 !important;
+}
+/* Quick Takeaways synced to is-content Impact at a Glance */
+.b-content-page .quick-takeaways {
+  background: #eaf0f2 !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 1.25rem 0 2rem !important;
+}
+.b-content-page .quick-takeaways h2 {
+  margin-top: 0 !important;
+}
+.b-content-page .quick-takeaways ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0.75rem 0 0 !important;
+  margin-left: 0.6rem !important;
+}
+.b-content-page .quick-takeaways li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  margin: 0 !important;
+  margin-left: -0.6rem !important;
+  margin-bottom: 0.6rem !important;
+  padding-bottom: 0 !important;
+  line-height: 1.5 !important;
+}
+.b-content-page .quick-takeaways li:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.b-content-page .quick-takeaways li .takeaway-icon {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  color: #107d64 !important;
+  flex-shrink: 0 !important;
+  margin-top: 0.30rem !important;
+}
+/* Consecutive paragraph spacing */
+main .lg\:col-span-2 p + p,
+.b-content-page .blog-template-content p + p {
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+/* FINAL content overrides (force) */
+body.b-content-page .blog-template-content p { line-height: 1.7 !important; margin-bottom: 0.5rem !important; }
+body.b-content-page .blog-template-content p + p { margin-top: 1.25rem !important; margin-bottom: 0.5rem !important; }
+body.b-content-page .blog-template-content ul,
+body.b-content-page .blog-template-content ol { margin-top: 1rem !important; margin-bottom: 1.5rem !important; padding-left: 1.55rem !important; }
+body.b-content-page .blog-template-content li { line-height: 1.5 !important; margin-bottom: 0.6rem !important; }
+body.b-content-page .blog-template-content li > ul,
+body.b-content-page .blog-template-content li > ol { margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; }
+body.b-content-page .blog-template-content li > ul > li,
+body.b-content-page .blog-template-content li > ol > li { line-height: 1.5 !important; margin-bottom: 0.6rem !important; }
+body.b-content-page .quick-takeaways ul { margin-left: 0.6rem !important; }
+body.b-content-page .quick-takeaways li { line-height: 1.5 !important; margin-bottom: 0.6rem !important; padding-bottom: 0 !important; }
+body.b-content-page .quick-takeaways li:last-child { margin-bottom: 0 !important; }
+body.b-content-page .quick-takeaways {
+  background: #eaf0f2 !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 1.25rem 0 2rem !important;
+}
+body.b-content-page .quick-takeaways h2 {
+  margin-top: 0 !important;
+}
+body.b-content-page .quick-takeaways ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0.75rem 0 0 !important;
+  margin-left: 0.6rem !important;
+}
+body.b-content-page .quick-takeaways li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  margin: 0 !important;
+  margin-left: -0.6rem !important;
+  margin-bottom: 0.6rem !important;
+  padding-bottom: 0 !important;
+  line-height: 1.5 !important;
+}
+body.b-content-page .quick-takeaways li:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+body.b-content-page .quick-takeaways li .takeaway-icon {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  color: #107d64 !important;
+  flex-shrink: 0 !important;
+  margin-top: 0.30rem !important;
+}
+/* FINAL About the Authors: grayscale wireframe */
+body.b-content-page .blog-authors-band {
+  background: #eceff1 !important;
+}
+body.b-content-page .blog-author-section h2 {
+  color: #333 !important;
+}
+body.b-content-page .blog-author-card {
+  background: #f6f6f6 !important;
+  border: 1px solid #dcdcdc !important;
+}
+body.b-content-page .blog-author-headshot {
+  border: 1px solid #bdbdbd !important;
+  background: #d9d9d9 !important;
+  color: #606060 !important;
+}
+body.b-content-page .blog-author-copy .blog-author-title {
+  color: #545454 !important;
+}
+/* FINAL button link color */
+body.b-content-page .btn,
+body.b-content-page .btn:link,
+body.b-content-page .btn:visited,
+body.b-content-page .event-cta,
+body.b-content-page .event-cta:link,
+body.b-content-page .event-cta:visited {
+  color: #ffffff !important;
+}
+/* Restore Take Action secondary buttons (last two) */
+body.b-content-page .blog-template-sidebar-actions .btn.btn-secondary,
+body.b-content-page .blog-template-sidebar-actions .btn.btn-secondary:link,
+body.b-content-page .blog-template-sidebar-actions .btn.btn-secondary:visited {
+  background: transparent !important;
+  color: #0f6f87 !important;
+  border: 2px solid #0f6f87 !important;
+}
+body.b-content-page .blog-template-sidebar-actions .btn.btn-secondary:hover {
+  background: #0f6f87 !important;
+  color: #ffffff !important;
+  border-color: #0f6f87 !important;
+}
+/* Related Posts buttons: grayscale wireframe */
+body.b-content-page .events-section.events-section-light .event-actions .btn.btn-primary,
+body.b-content-page .events-section.events-section-light .event-actions .btn.btn-primary:link,
+body.b-content-page .events-section.events-section-light .event-actions .btn.btn-primary:visited {
+  background: #4a4a4a !important;
+  border: none !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 1rem !important;
+  font-weight: 600 !important;
+}
+body.b-content-page .events-section.events-section-light .event-actions .btn.btn-primary:hover {
+  background: #3f3f3f !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+/* FINAL list parity: ol/li matches ul/li */
+body.b-content-page .blog-template-content ul,
+body.b-content-page .blog-template-content ol {
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+  padding-left: 1.55rem !important;
+  list-style-position: outside !important;
+}
+body.b-content-page .blog-template-content ul > li,
+body.b-content-page .blog-template-content ol > li {
+  line-height: 1.5 !important;
+  margin-bottom: 0.6rem !important;
+}
+body.b-content-page .blog-template-content li > ul,
+body.b-content-page .blog-template-content li > ol {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+body.b-content-page .blog-template-content li > ul > li,
+body.b-content-page .blog-template-content li > ol > li {
+  line-height: 1.5 !important;
+  margin-bottom: 0.6rem !important;
+}
+body.b-content-page .blog-template-content p small {
+  line-height: 1.45 !important;
+}
+body.b-content-page .blog-template-content p.small-note {
+  line-height: 1.4 !important;
+}
+body.b-content-page .blog-template-content p.small-note > small {
+  line-height: inherit !important;
+}
+/* FINAL paragraph margin override */
+main .lg\:col-span-2 p,
+main .lg\:col-span-2 .text-gray-dark p,
+.b-content-page .blog-template-content p {
+  margin-bottom: 0.5rem !important;
+}
+/* Final sync: b-content Quick Takeaways = is-content Impact at a Glance */
+body.b-content-page .quick-takeaways {
+  background: #eaf0f2 !important;
+  border-top: 4px solid #0c647b !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin: 1.25rem 0 2rem !important;
+}
+body.b-content-page .quick-takeaways h2 {
+  margin-top: 0 !important;
+}
+body.b-content-page .quick-takeaways ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0.75rem 0 0 !important;
+  margin-left: 0.6rem !important;
+}
+body.b-content-page .quick-takeaways li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  margin: 0 !important;
+  margin-left: -0.6rem !important;
+  margin-bottom: 0.6rem !important;
+  padding-bottom: 0 !important;
+  line-height: 1.5 !important;
+}
+body.b-content-page .quick-takeaways li:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+body.b-content-page .quick-takeaways li .takeaway-icon {
+  width: 1.125rem !important;
+  height: 1.125rem !important;
+  color: #0c647b !important;
+  flex-shrink: 0 !important;
+  margin-top: 0.4rem !important;
+}
+body.b-content-page .quick-takeaways li .takeaway-icon circle {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+body.b-content-page .quick-takeaways li .takeaway-icon path {
+  stroke: #ffffff !important;
+}
+</style>
+</head>
+<body data-page="events-resources" class="blog-template-page b-content-page">
+    <div class="is-content-top-frame-wrap" aria-label="Top Navigation and Hero">
+        <iframe class="is-content-top-frame" src="is-content.html?mode=bcontent#bcontent" title="Is Content Top Section" scrolling="no" loading="eager"></iframe>
+    </div>
+
+    <div class="events-section">
+        <div class="container">
+            <div class="about-hub-grid">
+                <article class="case-story-content blog-template-content">
+                    <h1 class="text-display font-bold text-charcoal" style="margin-bottom:0 !important;">Elevating Financial Acumen in Student Affairs: A Cornerstone for Student Success</h1>
+
+                    <p class="post-meta">
+                        January 25, 2025
+                         <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        By Dr. Takeem Dean, Frank Dorsey, II, Dr. Kelli Rainey
+                        <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                        <strong>Read time:</strong> 6 minutes
+                    </p>
+
+                   
+                    
+
+                    <div class="quick-takeaways">
+                        <h2>Quick Takeaways</h2>
+                        <ul>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="takeaway-icon lucide lucide-circle-check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span>Collaboration between finance and IR/IE is essential for <strong>data-informed decision-making</strong>.</span></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="takeaway-icon lucide lucide-circle-check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span>Integrated planning helps align <strong>resources with student success outcomes</strong>.</span></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="takeaway-icon lucide lucide-circle-check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span>Shared data frameworks improve <strong>transparency, trust, and strategy.</strong></span></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="takeaway-icon lucide lucide-circle-check" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg><span>The NACUBO Student Success Hub provides tools to support <strong>cross-functional collaboration</strong>.</span></li>
+                        </ul>
+                    </div>
+<h2>Why Financial Literacy Matters for Student Affairs</h2>
+<p>Student affairs professionals are often responsible for managing complex programs and services with limited budgets.</p>
+<p>Student affairs professionals shape transformative student experiences--but without financial fluency, even the best programs risk falling short.</p>
+<h3>How the Student Success Hub Can Help</h3>
+<img src="Webinar-Blog-Financial-Acument.png" alt="Student affairs and finance leaders participating in a budget literacy workshop." />
+<p class="small-note"><small>Cross-functional learning can help student affairs leaders build confidence in budgeting, forecasting, and resource advocacy.</small></p>
+
+<h3>Breaking Silos, Building Capacity</h3>
+<p>Closing the gap between student affairs and finance requires intentionality.</p>
+
+<h4>Shared Language and Shared Goals</h4>
+<p>When teams use common terms, planning and decision-making become more aligned and effective.</p>
+
+<p>That's why elevating financial acumen within student affairs is essential.</p>
+<h2>How the Student Success Hub Can Help</h2>
+
+<p>When student affairs leaders understand institutional finance, they can make a stronger case for resources.</p>
+<h3>What Financial Fluency Makes Possible</h3>
+
+<p>These efforts support stronger communication across finance, student affairs, and leadership teams.</p>
+<h4>Practical Next Steps</h4>
+
+<p>Student success is a shared responsibility--but without the resources to sustain impactful programs, even the most innovative student affairs initiatives can struggle to thrive.</p>
+<p>As institutions continue to evolve in response to student needs, financial literacy among student affairs professionals is no longer a nice-to-have--it's a necessity.</p>
+
+<p>When student affairs leaders understand how budget cycles work, how to advocate for funding using data, and how to align their programs with institutional priorities, they are better positioned to:</p>
+<ul>
+  <li>Secure and sustain resources for key initiatives</li>
+  <li>Demonstrate impact using financial and student success data</li>
+  <li>Collaborate effectively with chief financial officers and budget officers while contributing meaningfully to integrated planning and strategy conversations</li>
+</ul>
+
+<p>To strengthen financial fluency, institutions can start with practical, manageable actions:</p>
+<ol>
+  <li>Offer cross-functional training opportunities</li>
+  <li>Create shared planning conversations</li>
+  <li>Use data to connect programs with institutional priorities</li>
+</ol>
+
+<ul>
+  <li>Interactive toolkits that link student success strategies to financial practices</li>
+  <li>Case studies that showcase how institutions align budgeting with student-centered goals</li>
+  <li>Guides for engaging with finance leaders and using data to advocate for resources</li>
+</ul>
+<p>These resources help student affairs leaders move from mission-driven ideas to sustainable implementation.</p>
+
+<ol>
+  <li>Treat financial acumen as a strategic asset</li>
+  <li>Strengthen collaboration with finance leaders</li>
+  <li>Invest in intentional learning over time</li>
+</ol>
+<p>Each of these steps helps leaders build confidence and expand their influence.</p>
+
+<ul>
+  <li>Budgeting</li>
+  <li>Forecasting</li>
+</ul>
+<ul>
+  <li>Financial planning</li>
+  <li>Resource advocacy</li>
+</ul>
+
+<ol>
+  <li>Review current budget practices</li>
+  <li>Identify gaps in financial knowledge</li>
+</ol>
+<ol>
+  <li>Build shared understanding across departments</li>
+  <li>Apply lessons to future planning</li>
+</ol>
+
+<ul>
+  <li>Joint training sessions for student affairs and finance staff</li>
+  <li>Mentorship or peer-learning cohorts focused on budget literacy</li>
+</ul>
+<ol>
+  <li>Start with a shared goal</li>
+  <li>Choose a practical collaboration model</li>
+  <li>Measure progress over time</li>
+</ol>
+
+<ol>
+  <li>Review current data use practices</li>
+  <li>Identify opportunities for stronger collaboration</li>
+</ol>
+<ul>
+  <li>Are institutional data insights informing financial decisions?</li>
+  <li>Are student success outcomes driving budget priorities?</li>
+</ul>
+
+<h2>How the Student Success Hub Can Help</h2>
+<ul>
+  <li>Interactive toolkits</li>
+  <li>Case studies</li>
+  <li>Guides for engaging finance leaders</li>
+  <li>Professional development materials</li>
+</ul>
+
+<h2>What to Do Next</h2>
+<ol>
+  <li>Start the conversation</li>
+  <li>Assess current practices</li>
+  <li>Explore available tools and resources</li>
+  <li>Pilot a collaborative initiative</li>
+</ol>
+
+<ul>
+  <li>Shared data dashboards that integrate financial and student outcome indicators</li>
+  <li>Collaborative planning teams aligned to student success goals</li>
+</ul>
+<h2>From Silos to Strategy</h2>
+
+<ol>
+  <li>Build financial fluency</li>
+  <li>Strengthen cross-campus collaboration</li>
+  <li>Align work with institutional strategy</li>
+</ol>
+<h2>Looking Ahead: What's Your Next Step?</h2>
+
+<ul>
+  <li>Interactive toolkits</li>
+  <li>Case studies</li>
+  <li>Planning guides</li>
+</ul>
+<h3>Resources That Support Action</h3>
+
+<ol>
+  <li>Clarify goals</li>
+  <li>Identify data needs</li>
+  <li>Connect resources to outcomes</li>
+</ol>
+<h3>Steps for Getting Started</h3>
+
+<ul>
+  <li>Budget literacy workshops</li>
+  <li>Peer-learning opportunities</li>
+  <li>Cross-functional planning sessions</li>
+</ul>
+<h4>Capacity-Building Supports</h4>
+
+<ul>
+  <li>Resource toolkits</li>
+  <li>Case examples</li>
+</ul>
+<h4>Short-Term Opportunities</h4>
+
+<ul>
+  <li>
+    Cross-functional collaboration can include:
+    <ul>
+      <li>joint training sessions</li>
+      <li>shared planning meetings</li>
+      <li>common dashboards and reporting tools</li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    Intentional learning can include:
+    <ol>
+      <li>participating in training</li>
+      <li>seeking mentorship</li>
+      <li>joining cross-divisional conversations</li>
+    </ol>
+  </li>
+</ul>
+
+<img src="Webinar-Blog-Financial-Acument.png" alt="Shared dashboard displaying student outcomes and budget indicators." />
+<p>Shared data dashboards can help institutions align financial decisions with student success priorities.</p>
+
+<p>Collaborative planning teams create stronger connections between institutional priorities and day-to-day decision-making.</p>
+<img src="Webinar-Blog-Financial-Acument.png" alt="Cross-functional planning team reviewing strategy and budget materials." />
+
+<h2>Breaking Silos, Building Capacity</h2>
+<img src="Webinar-Blog-Financial-Acument.png" alt="Student affairs and finance staff collaborating in a planning meeting." />
+</article>
+
+                <aside class="case-story-highlight blog-template-meta" aria-label="Share and actions">
+                    <h3>Share</h3>
+                    <div class="share-actions" aria-label="Share actions">
+                        <button type="button" class="share-action-btn" aria-label="Copy link">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <rect x="9" y="9" width="10" height="10" rx="2"></rect>
+                                <rect x="5" y="5" width="10" height="10" rx="2"></rect>
+                            </svg>
+                        </button>
+                        <a href="#" class="share-action-btn" aria-label="Share by email">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+                                <path d="M3 8l9 6 9-6"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="share-action-btn" aria-label="Share on social media">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <path d="M8.6 10.7l6.8-3.4"></path>
+                                <path d="M8.6 13.3l6.8 3.4"></path>
+                            </svg>
+                        </a>
+                        <button type="button" class="share-action-btn" aria-label="Print">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <rect x="7" y="3" width="10" height="5"></rect>
+                                <rect x="6" y="14" width="12" height="7"></rect>
+                                <rect x="4" y="9" width="16" height="7" rx="2"></rect>
+                                <path d="M16 12h2"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <h3>Take Action</h3>
+                    <div class="blog-template-sidebar-actions">
+                        <a href="#" class="btn btn-primary">Watch Webinar</a>
+                        <a href="#" class="btn btn-secondary download-resource-link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>Download Resource</a>
+                        <a href="browse-toolkits.html" class="btn btn-secondary explore-toolkit-link">Explore Toolkit<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <div class="events-section blog-authors-band">
+        <div class="container">
+            <div class="blog-author-section" aria-label="Author section">
+                <h2>About the Authors</h2>
+                <div class="blog-author-card">
+                    <div class="blog-author-headshot" aria-hidden="true">Optional Headshot</div>
+                    <div class="blog-author-copy">
+                        <h3>[Author Name]</h3>
+                        <p class="blog-author-title">[Author Title]</p>
+                        <p>[Short bio: 1-2 sentences about the author's role, expertise, and perspective.]</p>
+                        <p><a href="#" class="event-cta">Optional Button</a></p>
+                    </div>
+                </div>
+                <div class="blog-author-card">
+                    <div class="blog-author-headshot" aria-hidden="true">Optional Headshot</div>
+                    <div class="blog-author-copy">
+                        <h3>[Author Name]</h3>
+                        <p class="blog-author-title">[Author Title]</p>
+                        <p>[Short bio: 1-2 sentences about the author's role, expertise, and perspective.]</p>
+                        <p><a href="#" class="event-cta">Optional Button</a></p>
+                    </div>
+                </div>
+                <div class="blog-author-card">
+                    <div class="blog-author-headshot" aria-hidden="true">Optional Headshot</div>
+                    <div class="blog-author-copy">
+                        <h3>[Author Name]</h3>
+                        <p class="blog-author-title">[Author Title]</p>
+                        <p>[Short bio: 1-2 sentences about the author's role, expertise, and perspective.]</p>
+                        <p><a href="#" class="event-cta">Optional Button</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="events-section events-section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Related Posts</h2>
+            </div>
+
+            <div class="events-grid">
+                <article class="event-card">
+                    <div class="event-wireframe">Post Thumbnail</div>
+                    <h3>Three signs your institution is ready for an equity-centered budget process</h3>
+                    <p>Quick summary placeholder for a related article card.</p>
+                    <div class="event-actions">
+                        <a href="#" class="btn btn-primary">Read Post</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-wireframe">Post Thumbnail</div>
+                    <h3>Building a shared student success glossary across divisions</h3>
+                    <p>Quick summary placeholder for a related article card.</p>
+                    <div class="event-actions">
+                        <a href="#" class="btn btn-primary">Read Post</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-wireframe">Post Thumbnail</div>
+                    <h3>From dashboard to decision: making analytics usable in budgeting meetings</h3>
+                    <p>Quick summary placeholder for a related article card.</p>
+                    <div class="event-actions">
+                        <a href="#" class="btn btn-primary">Read Post</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div id="site-footer"></div>
+    <script>
+        (function () {
+            const topFrame = document.querySelector(".is-content-top-frame");
+            if (!topFrame) return;
+            let breadcrumbObserver = null;
+
+            const updateBreadcrumb = () => {
+                try {
+                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
+                    if (!doc) return;
+
+                    const breadcrumbNav = doc.querySelector('nav[aria-label="Breadcrumb"]');
+                    if (!breadcrumbNav) return;
+
+                    const crumbLinks = breadcrumbNav.querySelectorAll("ol li a");
+                    const crumbCurrent = breadcrumbNav.querySelector('ol li [aria-current="page"]');
+
+                    if (crumbLinks.length > 1) {
+                        crumbLinks[1].textContent = "Event and recources";
+                    }
+                    const institutionalLinks = breadcrumbNav.querySelectorAll('a[href*="institutional-stories"]');
+                    institutionalLinks.forEach((link) => {
+                        link.textContent = "Event and recources";
+                    });
+                    if (crumbCurrent) {
+                        crumbCurrent.textContent = "Blog Post Template";
+                    }
+
+                    const mainNav = doc.querySelector('nav[aria-label="Main navigation"]');
+                    if (mainNav) {
+                        const navLinks = mainNav.querySelectorAll("a");
+                        navLinks.forEach((link) => {
+                            const href = link.getAttribute("href") || "";
+                            if (href.includes("/events-and-resources")) {
+                                link.setAttribute("aria-current", "page");
+                                link.classList.remove("text-charcoal", "hover:text-primary", "hover:bg-gray-lighter");
+                                link.classList.add("text-primary", "bg-primary-light");
+                            } else if (href.includes("/institutional-stories")) {
+                                if (link.getAttribute("aria-current") === "page") {
+                                    link.removeAttribute("aria-current");
+                                }
+                                link.classList.remove("text-primary", "bg-primary-light");
+                                link.classList.add("text-charcoal", "hover:text-primary", "hover:bg-gray-lighter");
+                            }
+                        });
+                    }
+                } catch (e) {
+                    // Keep silent if frame is not accessible.
+                }
+            };
+
+            const forceBContentBreadcrumb = () => {
+                const wrap = document.querySelector(".is-content-top-frame-wrap");
+                if (!wrap) return;
+                wrap.setAttribute("data-breadcrumb-override", "true");
+            };
+
+            const watchBreadcrumb = () => {
+                try {
+                    const doc = topFrame.contentDocument || topFrame.contentWindow.document;
+                    if (!doc || !doc.body) return;
+                    if (breadcrumbObserver) breadcrumbObserver.disconnect();
+                    breadcrumbObserver = new MutationObserver(updateBreadcrumb);
+                    breadcrumbObserver.observe(doc.body, { childList: true, subtree: true, characterData: true });
+                } catch (e) {
+                    // Keep silent if frame is not accessible.
+                }
+            };
+
+            topFrame.addEventListener("load", () => {
+                updateBreadcrumb();
+                watchBreadcrumb();
+                forceBContentBreadcrumb();
+                setTimeout(updateBreadcrumb, 200);
+                setTimeout(updateBreadcrumb, 800);
+                setTimeout(updateBreadcrumb, 1800);
+                const startedAt = Date.now();
+                const timer = setInterval(() => {
+                    updateBreadcrumb();
+                    if (Date.now() - startedAt > 10000) {
+                        clearInterval(timer);
+                    }
+                }, 500);
+            });
+            updateBreadcrumb();
+            forceBContentBreadcrumb();
+        })();
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
