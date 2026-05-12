@@ -158,6 +158,7 @@
             position: sticky;
             top: 16px !important;
             align-self: start;
+            padding: 1.5rem !important;
         }
         .b-content-page .blog-template-sidebar-actions .btn.btn-primary {
             background: #0f6f87 !important;
@@ -171,18 +172,6 @@
             justify-content: center !important;
             width: auto !important;
             text-decoration: none !important;
-        }
-        .b-content-page .blog-template-sidebar-actions .btn.btn-primary::after {
-            content: "";
-            width: 16px;
-            height: 16px;
-            margin-left: 0.75rem;
-            transform: translateY(1px);
-            flex: 0 0 16px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 16px 16px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E");
         }
         .b-content-page .blog-template-sidebar-actions .btn.btn-primary:hover {
             background: #0a5366 !important;
@@ -591,7 +580,6 @@ main .lg\:col-span-2 .text-gray-dark p,
 /* Final sync: b-content Quick Takeaways = is-content Impact at a Glance */
 body.b-content-page .quick-takeaways {
   background: #eaf0f2 !important;
-  border-top: 4px solid #0c647b !important;
   border-radius: 12px !important;
   padding: 1.5rem !important;
   margin: 1.25rem 0 2rem !important;
@@ -633,6 +621,35 @@ body.b-content-page .quick-takeaways li .takeaway-icon circle {
 body.b-content-page .quick-takeaways li .takeaway-icon path {
   stroke: #ffffff !important;
 }
+body.b-content-page .sidebar-share-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 0.7rem !important;
+  margin: 0 0 1rem !important;
+}
+body.b-content-page .blog-template-sidebar {
+  align-self: start !important;
+}
+body.b-content-page .sidebar-share-actions .share-action-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border: 1px solid #dce5e8 !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  color: #0c647b !important;
+  box-shadow: 0 1px 2px rgba(12, 100, 123, 0.04) !important;
+}
+body.b-content-page .sidebar-share-actions .share-action-btn svg {
+  width: 17px !important;
+  height: 17px !important;
+  stroke-width: 2 !important;
+}
+body.b-content-page .sidebar-share-actions .share-action-btn:hover,
+body.b-content-page .sidebar-share-actions .share-action-btn:focus-visible {
+  background: #f7fbfc !important;
+  border-color: #c8d8dd !important;
+  color: #084f62 !important;
+}
 </style>
 </head>
 <body data-page="events-resources" class="blog-template-page b-content-page">
@@ -653,9 +670,6 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
                         <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                         <strong>Read time:</strong> 6 minutes
                     </p>
-
-                   
-                    
 
                     <div class="quick-takeaways">
                         <h2>Quick Takeaways</h2>
@@ -844,19 +858,18 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
 <img src="Webinar-Blog-Financial-Acument.png" alt="Student affairs and finance staff collaborating in a planning meeting." />
 </article>
 
-                <aside class="case-story-highlight blog-template-meta" aria-label="Share and actions">
-                    <h3>Share</h3>
-                    <div class="share-actions" aria-label="Share actions">
+                <div class="blog-template-sidebar">
+                    <div class="share-actions sidebar-share-actions" aria-label="Share actions">
                         <button type="button" class="share-action-btn" aria-label="Copy link">
                             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <rect x="9" y="9" width="10" height="10" rx="2"></rect>
-                                <rect x="5" y="5" width="10" height="10" rx="2"></rect>
+                                <path d="M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+                                <path d="M14 11a5 5 0 0 0-7.1 0l-2 2a5 5 0 0 0 7.1 7.1l1.1-1.1"></path>
                             </svg>
                         </button>
                         <a href="#" class="share-action-btn" aria-label="Share by email">
                             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <rect x="3" y="6" width="18" height="12" rx="2"></rect>
-                                <path d="M3 8l9 6 9-6"></path>
+                                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                                <path d="m3 7 9 6 9-6"></path>
                             </svg>
                         </a>
                         <a href="#" class="share-action-btn" aria-label="Share on social media">
@@ -878,13 +891,15 @@ body.b-content-page .quick-takeaways li .takeaway-icon path {
                         </button>
                     </div>
 
+                    <aside class="case-story-highlight blog-template-meta" aria-label="Actions">
                     <h3>Take Action</h3>
                     <div class="blog-template-sidebar-actions">
                         <a href="#" class="btn btn-primary">Watch Webinar</a>
                         <a href="#" class="btn btn-secondary download-resource-link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>Download Resource</a>
-                        <a href="browse-toolkits.html" class="btn btn-secondary explore-toolkit-link">Explore Toolkit<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+                        <a href="browse-toolkits.html" class="btn btn-secondary explore-toolkit-link">Find Toolkit</a>
                     </div>
-                </aside>
+                    </aside>
+                </div>
             </div>
         </div>
     </div>
